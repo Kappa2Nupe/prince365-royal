@@ -115,7 +115,16 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 .foot{text-align:center;color:var(--muted);font-size:13px;margin-top:18px;letter-spacing:.06em}
 .rating{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:2px 8px;border-radius:4px;font-weight:600;margin-right:6px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none!important}.rev{opacity:1;transform:none}.pol{opacity:.95}.rgrain,.flick{display:none}}
+
+/* slow-motion concert footage behind the whole page */
+html{background:var(--ink)}body{background:transparent}
+.pagebg{position:fixed;inset:0;z-index:-10;overflow:hidden;pointer-events:none;background:#0d0316 url(assets/bg-slow-vertical.jpg) center/cover}
+.pagebg video{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;filter:blur(3px) saturate(1.1) brightness(.85)}
+.pagebg:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(30,6,45,.55),rgba(8,2,14,.85) 80%),linear-gradient(180deg,rgba(60,10,70,.25),rgba(10,2,18,.35))}
+@media(min-width:760px) and (orientation:landscape){.pagebg{background-image:url(assets/bg-slow-wide.jpg)}}
+@media(prefers-reduced-motion:reduce){.pagebg video{display:none}}
 </style></head><body>
+<div class="pagebg" aria-hidden="true"><video id="pagebgVid" muted playsinline autoplay loop preload="metadata" disablepictureinpicture></video></div>
 <div class="curtain" id="curtain" aria-hidden="true"><div class="valance"><svg viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="vv" patternUnits="userSpaceOnUse" width="60" height="110"><image href="assets/velvet.jpg" width="62" height="110" preserveAspectRatio="none"/></pattern>
 <linearGradient id="vs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset=".45" stop-color="#ff7a9a" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".6"/></linearGradient>
 <linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset=".5" stop-color="#d4a437"/><stop offset="1" stop-color="#6e4b0c"/></linearGradient>
@@ -1100,5 +1109,14 @@ addEventListener("load",()=>{
 function u(){var d=t-Date.now();if(!c)return;if(d<=0){c.textContent='Reveal coming any minute…';return;}
 var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);c.textContent=D+'d '+H+'h '+M+'m';}
 u();setInterval(u,6e4);})();
+</script>
+<script>
+(function(){var v=document.getElementById('pagebgVid');if(!v)return;
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){v.remove();return;}
+var w=matchMedia('(min-width:760px) and (orientation:landscape)').matches;
+v.poster='assets/bg-slow-'+(w?'wide':'vertical')+'.jpg';v.src='assets/bg-slow-'+(w?'wide':'vertical')+'.mp4';v.muted=true;
+var go=function(){if(!document.hidden)v.play().catch(function(){});};go();
+document.addEventListener('visibilitychange',function(){document.hidden?v.pause():go();});
+['touchstart','click'].forEach(function(e){addEventListener(e,go,{once:true,passive:true});});})();
 </script>
 </body></html>
