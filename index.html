@@ -123,6 +123,16 @@ html{background:var(--ink)}body{background:transparent}
 .pagebg:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(30,6,45,.55),rgba(8,2,14,.85) 80%),linear-gradient(180deg,rgba(60,10,70,.25),rgba(10,2,18,.35))}
 @media(min-width:760px) and (orientation:landscape){.pagebg{background-image:url(assets/bg-slow-wide.jpg)}}
 @media(prefers-reduced-motion:reduce){.pagebg video{display:none}}
+
+/* promo-first reveal */
+@media(min-width:900px){.promo-first .tv{width:min(400px,calc((100svh - 170px) * 9 / 16))!important}}
+.promo-first{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:76px;padding-bottom:70px}
+@media(max-width:899px){.promo-first .tv{width:min(88vw,calc((100svh - 290px) * 9 / 16))!important}.promo-first .promo-copy{gap:6px}.promo-first .advisory{position:absolute!important;right:-10px!important;left:auto!important;top:auto!important;bottom:-18px!important;width:96px!important;margin:0!important;z-index:3}.promo-first .scrollcue{z-index:5}.promo-first .promo-copy .big{display:none}}
+.scrollcue{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom) + 10px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0;color:var(--gold2);font:600 11px Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;opacity:.8;text-shadow:0 1px 6px #000}
+.scrollcue i{font-style:normal;font-size:22px;line-height:1;animation:cue 1.8s ease-in-out infinite}
+.scrollcue.ended{opacity:1;color:#ffe08a}.scrollcue.ended span:after{content:" · 508 awaits"}
+@keyframes cue{50%{transform:translateY(5px)}}
+@media(prefers-reduced-motion:reduce){.scrollcue i{animation:none}}
 </style></head><body>
 <div class="pagebg" aria-hidden="true"><video id="pagebgVid" muted playsinline autoplay loop preload="metadata" disablepictureinpicture></video></div>
 <div class="curtain" id="curtain" aria-hidden="true"><div class="valance"><svg viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="vv" patternUnits="userSpaceOnUse" width="60" height="110"><image href="assets/velvet.jpg" width="62" height="110" preserveAspectRatio="none"/></pattern>
@@ -136,7 +146,26 @@ html{background:var(--ink)}body{background:transparent}
 <button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
 <div class="links"><a href="#event">Event</a><a href="#dj">DJ</a><a href="#history">Timeline</a><a href="#clubhouse">Clubhouse</a><a href="#family">Family</a><a href="#community">Living Room</a><a href="#notify">Notify</a></div></nav>
 <main id="top">
-<section class="rhero"><div class="bg"></div>
+<section class="promo promo-first" id="promo"><div class="promo-inner"><div class="promo-copy"><p class="eyebrow reveal">Prince 365 Studios presents</p><h2 class="h2 reveal">The <span class="neon-text">Promo</span></h2><p class="big reveal">At Smorgies Pub (formerly the 508), <em>for one night it will be 508 once again.</em></p><button class="btn btn-gold" id="soundBtn" type="button"><span class="ico">🔊</span> <span class="lbl">Play with sound</span></button></div><div class="tv">
+      <div class="tv-frame">
+        <video id="heroVideo" class="tv-video" muted playsinline preload="auto" poster="assets/hero-poster-logo.jpg">
+          <source src="assets/prince365-web.mp4" type="video/mp4">
+        </video>
+        <div class="vhs-osd vhs-tl"><span class="rec">●</span> PLAY ▶</div>
+        <div class="vhs-osd vhs-tl2" id="vhsClock">SP 00:00:00</div>
+        <div class="vhs-osd vhs-bl">JUN. 01 2027</div>
+        <div class="vhs-osd vhs-br">CH 508</div>
+        <div class="tv-glare"></div>
+        <button class="tap-sound" id="tapSound" type="button" aria-label="Turn sound on"><span class="ts-ring" aria-hidden="true"></span><span class="ts-ico" aria-hidden="true">🔊</span><span class="ts-lbl">Tap for sound</span></button>
+        <button class="mute-btn" id="muteBtn" type="button" aria-label="Unmute video" aria-pressed="false">
+          <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <img class="advisory" src="assets/purple-advisory.png" alt="Purple Advisory: Explicit Funk Content" width="720" height="467">
+    </div>
+  </div><a class="scrollcue" href="#hero" aria-label="Scroll for event details"><span>Scroll for details</span><i aria-hidden="true">⌄</i></a></section>
+<section class="rhero" id="hero"><div class="bg"></div>
 <div class="film"><video id="vid" muted playsinline autoplay loop preload="auto" poster="assets/stage-vertical.jpg" aria-hidden="true"></video></div>
 <div class="grade"></div><canvas id="fx"></canvas><div class="vig"></div><div class="rgrain"></div><div class="flick"></div>
 <figure class="pol a"><img src="assets/hero-fitz-508.jpg" alt="Fitz in his Prince 365 jacket" style="object-position:50% 15%"></figure>
@@ -164,25 +193,7 @@ html{background:var(--ink)}body{background:transparent}
 <p class="quote">“We gon' party like there ain't gon' be another 1”</p>
 <p class="foot">Prince 365 Studios · Prince 365 LLC</p>
 </section>
-<section class="promo" id="promo"><div class="promo-inner"><div class="promo-copy"><p class="eyebrow reveal">Prince 365 Studios presents</p><h2 class="h2 reveal">The <span class="neon-text">Promo</span></h2><p class="big reveal">At Smorgies Pub (formerly the 508), <em>for one night it will be 508 once again.</em></p><button class="btn btn-gold" id="soundBtn" type="button"><span class="ico">🔊</span> <span class="lbl">Play with sound</span></button></div><div class="tv">
-      <div class="tv-frame">
-        <video id="heroVideo" class="tv-video" muted loop playsinline preload="none" poster="assets/hero-poster-logo.jpg">
-          <source src="assets/prince365-web.mp4" type="video/mp4">
-        </video>
-        <div class="vhs-osd vhs-tl"><span class="rec">●</span> PLAY ▶</div>
-        <div class="vhs-osd vhs-tl2" id="vhsClock">SP 00:00:00</div>
-        <div class="vhs-osd vhs-bl">JUN. 01 2027</div>
-        <div class="vhs-osd vhs-br">CH 508</div>
-        <div class="tv-glare"></div>
-        <button class="tap-sound" id="tapSound" type="button" aria-label="Turn sound on"><span class="ts-ring" aria-hidden="true"></span><span class="ts-ico" aria-hidden="true">🔊</span><span class="ts-lbl">Tap for sound</span></button>
-        <button class="mute-btn" id="muteBtn" type="button" aria-label="Unmute video" aria-pressed="false">
-          <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-      <img class="advisory" src="assets/purple-advisory.png" alt="Purple Advisory: Explicit Funk Content" width="720" height="467">
-    </div>
-  </div></section>
+
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-wrap"><div class="marquee" aria-hidden="true">
   <div class="marquee-track">
@@ -1054,9 +1065,18 @@ const M=mus,S=snd;let muted=localStorage.getItem('p365_mute');muted=muted===null
 function setS(){S.classList.toggle('off',muted);S.setAttribute('aria-label',muted?'Turn sound on':'Turn sound off')}
 function fadeTo(v,ms){const a=M.volume,t0=performance.now();(function st(){const k=Math.min(1,(performance.now()-t0)/ms);M.volume=a+(v-a)*k;if(k<1)requestAnimationFrame(st)})()}
 S.onclick=()=>{muted=!M.paused;localStorage.setItem('p365_mute',muted?'1':'0');setS();if(muted)M.pause();else{M.volume=.35;M.play().catch(()=>{})}};
+const HV=document.getElementById('heroVideo');
+function promoStart(sound){if(!HV)return;M.pause();try{HV.currentTime=0}catch(e){}
+ if(sound){const t=document.getElementById('tapSound');t?t.click():(HV.muted=false,HV.play().catch(()=>{HV.muted=true;HV.play().catch(()=>{})}))}
+ else{HV.muted=true;HV.play().catch(()=>{})}}
+if(HV){HV.addEventListener('play',()=>{if(!M.paused){fadeTo(0,500);setTimeout(()=>M.pause(),520)}try{window.p365Mix&&window.p365Mix.pause()}catch(e){}});
+ document.addEventListener('p365:mix',()=>{HV.pause()});
+ let lastTouch=0;['touchstart','wheel','keydown','pointerdown'].forEach(e=>addEventListener(e,()=>{lastTouch=Date.now()},{passive:true}));
+ HV.addEventListener('ended',()=>{const c=document.querySelector('.scrollcue');c&&c.classList.add('ended');
+  setTimeout(()=>{if(Date.now()-lastTouch>4000&&scrollY<innerHeight*.5)document.getElementById('hero').scrollIntoView({behavior:R?'auto':'smooth'})},1200)})}
 let done=0;function reveal(sound){if(done)return;done=1;S.hidden=false;
- if(sound){muted=false;localStorage.setItem('p365_mute','0');M.currentTime=0;M.volume=.9;M.play().catch(()=>{});setTimeout(()=>fadeTo(.3,3000),12000)}else{muted=true;localStorage.setItem('p365_mute','1')}
- setS();setTimeout(()=>{B.classList.add('open');setTimeout(()=>B.classList.add('go'),1300);setTimeout(()=>{curtain.classList.add('done');curtain.remove()},2900)},sound?1050:150);V.play&&V.play().catch(()=>{})}
+ muted=true;localStorage.setItem('p365_mute','1');promoStart(sound);
+ setS();setTimeout(()=>{B.classList.add('open');setTimeout(()=>B.classList.add('go'),1300);setTimeout(()=>{curtain.classList.add('done');curtain.remove()},2900)},sound?400:150);V.play&&V.play().catch(()=>{})}
 if(R){B.classList.add('open','go');curtain.remove();muted=true;S.hidden=false;setS()}else{tap.onclick=()=>reveal(1);nosound.onclick=()=>reveal(0)}
 // countdown: June 1 2027 8pm CDT = 2027-06-02T01:00Z
 const T=Date.UTC(2027,5,2,1,0,0),p=n=>String(n).padStart(2,'0');
