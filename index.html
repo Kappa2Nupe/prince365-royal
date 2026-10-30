@@ -77,7 +77,15 @@ nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;jus
 .open .curtain{pointer-events:none}
 .open .curtain i.l{transform:translateX(-96%) skewX(-6deg) scaleX(.6)}.open .curtain i.r{transform:translateX(96%) skewX(6deg) scaleX(.6)}
 .open .valance{transform:translateY(-110%)}
-.open .curtain img{opacity:0;transform:translate(-50%,-50%) scale(1.3)}.open .skip{opacity:0}
+.open .curtain img{opacity:0;transform:translate(-50%,-50%) scale(1.3)}
+.curtain img{top:44%}
+.enter{position:absolute;z-index:4;left:0;right:0;top:calc(44% + min(22vw,110px) + 34px);display:flex;flex-direction:column;align-items:center;gap:14px;transition:opacity .4s}
+.tap{padding:16px 32px;border-radius:999px;border:0;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a0828;font:700 17px Inter,sans-serif;letter-spacing:.06em;box-shadow:0 0 0 0 rgba(245,197,66,.6),0 10px 30px rgba(0,0,0,.5);animation:pulse 1.8s ease-out infinite;cursor:pointer}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(245,197,66,0),0 10px 30px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 0 rgba(245,197,66,0),0 10px 30px rgba(0,0,0,.5)}}
+.nosound{background:none;border:0;color:var(--gold2);font:500 13px Inter,sans-serif;text-decoration:underline;text-underline-offset:3px;opacity:.85;cursor:pointer;padding:8px;text-shadow:0 1px 6px #000}
+.open .enter{opacity:0;pointer-events:none}
+.snd{position:fixed;z-index:40;right:16px;bottom:calc(env(safe-area-inset-bottom) + 16px);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--gold);background:rgba(20,5,31,.55);border:1px solid rgba(245,197,66,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer}
+.snd .x{display:none}.snd.off .x{display:block}.snd.off .w{display:none}
 /* lineup */
 section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 .lu h2{font-family:"Cormorant Garamond",serif;font-size:clamp(44px,11vw,84px);line-height:.95;font-weight:500}.lu h2 em{color:var(--gold)}
@@ -94,9 +102,11 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 .quote{margin:46px 0 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(26px,7vw,44px);line-height:1.15;text-align:center}
 .foot{text-align:center;color:var(--muted);font-size:13px;margin-top:18px;letter-spacing:.06em}
 .rating{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:2px 8px;border-radius:4px;font-weight:600;margin-right:6px}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none}.rev{opacity:1;transform:none}.pol{opacity:.95}.grain,.flick{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none!important}.rev{opacity:1;transform:none}.pol{opacity:.95}.grain,.flick{display:none}}
 </style></head><body>
-<div class="curtain" id="curtain" aria-hidden="true"><div class="valance"></div><i class="l"></i><i class="r"></i><img src="assets/p365-studios-logo.png" alt=""><button class="skip" id="skip" aria-label="Skip intro">Skip ▸▸</button></div>
+<div class="curtain" id="curtain" aria-hidden="true"><div class="valance"></div><i class="l"></i><i class="r"></i><img src="assets/p365-studios-logo.png" alt=""><div class="enter"><button class="tap" id="tap">Tap to open <span aria-hidden="true">♪</span></button><button class="nosound" id="nosound">Enter without sound</button></div></div>
+<audio id="mus" src="assets/funk-opening.m4a" preload="auto" loop playsinline></audio>
+<button class="snd" id="snd" aria-label="Turn sound on" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="x" d="M16 9l6 6M22 9l-6 6"/></svg></button>
 <nav><a class="wm" href="#top"><img src="assets/p365-studios-logo-sm.png" alt="">Prince&nbsp;<b>365</b></a>
 <button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
 <div class="links"><a href="#lineup">Event</a><a href="https://prince365.pages.dev/#history">Timeline</a><a href="https://prince365.pages.dev/#family">Family</a><a href="https://prince365.pages.dev/#clubhouse">Living Room</a></div></nav>
@@ -133,8 +143,14 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 const R=matchMedia('(prefers-reduced-motion: reduce)').matches,B=document.body;
 const V=vid,wide=matchMedia('(min-width:760px)').matches;
 if(R){V.removeAttribute('autoplay');V.poster='assets/stage-'+(wide?'wide':'vertical')+'.jpg'}else{V.src='assets/stage-'+(wide?'wide':'vertical')+'.mp4';V.play&&V.play().catch(()=>{})}
-let done=0;function reveal(fast){if(done)return;done=1;B.classList.add('open');setTimeout(()=>B.classList.add('go'),fast?100:1300);setTimeout(()=>curtain.remove(),fast?600:2700);V.play&&V.play().catch(()=>{})}
-if(R){B.classList.add('open','go');curtain.remove()}else{setTimeout(reveal,1200);skip.onclick=()=>{curtain.querySelectorAll('i,.valance').forEach(e=>e.style.transitionDuration='.4s');reveal(1)};curtain.addEventListener('click',e=>{if(e.target!==skip)reveal()})}
+const M=mus,S=snd;let muted=localStorage.getItem('p365_mute');muted=muted===null?false:muted==='1';
+function setS(){S.classList.toggle('off',muted);S.setAttribute('aria-label',muted?'Turn sound on':'Turn sound off')}
+function fadeTo(v,ms){const a=M.volume,t0=performance.now();(function st(){const k=Math.min(1,(performance.now()-t0)/ms);M.volume=a+(v-a)*k;if(k<1)requestAnimationFrame(st)})()}
+S.onclick=()=>{muted=!muted;localStorage.setItem('p365_mute',muted?'1':'0');setS();if(muted)M.pause();else{M.volume=.35;M.play().catch(()=>{})}};
+let done=0;function reveal(sound){if(done)return;done=1;S.hidden=false;
+ if(sound){muted=false;localStorage.setItem('p365_mute','0');M.currentTime=0;M.volume=.9;M.play().catch(()=>{});setTimeout(()=>fadeTo(.3,3000),12000)}else{muted=true;localStorage.setItem('p365_mute','1')}
+ setS();setTimeout(()=>{B.classList.add('open');setTimeout(()=>B.classList.add('go'),1300);setTimeout(()=>curtain.remove(),2700)},sound?1050:150);V.play&&V.play().catch(()=>{})}
+if(R){B.classList.add('open','go');curtain.remove();muted=true;S.hidden=false;setS()}else{tap.onclick=()=>reveal(1);nosound.onclick=()=>reveal(0)}
 // countdown: June 1 2027 8pm CDT = 2027-06-02T01:00Z
 const T=Date.UTC(2027,5,2,1,0,0),p=n=>String(n).padStart(2,'0');
 function tick(){let x=Math.max(0,T-Date.now())/1e3;d.textContent=Math.floor(x/86400);h.textContent=p(Math.floor(x/3600)%24);m.textContent=p(Math.floor(x/60)%60);s.textContent=p(Math.floor(x)%60)}tick();setInterval(tick,1000);
