@@ -1,0 +1,24 @@
+funk-B beat grid (assets/funk-opening.mp3 = shots/funk-B.mp3)
+Source: 'Funky Riboflavin' by Mr Smith, CC BY 4.0, cut from 10.031s of the original FMA stream
+Loop length: 28.979 s = 12 bars of 4/4 (file decodes to 28.979 s incl. mp3 padding)
+Grid tempo (bar-locked): 99.38 BPM; beat = 0.6037 s; bar = 2.4149 s; librosa raw estimate 99.4 BPM
+Bar 1 downbeat = 0.000 s (opening hit). Curtain sweep begins 1.05 s after tap.
+
+Bar start times (s):
+  bar  1    0.000
+  bar  2    2.415
+  bar  3    4.830
+  bar  4    7.245
+  bar  5    9.660
+  bar  6   12.075
+  bar  7   14.489
+  bar  8   16.904
+  bar  9   19.319
+  bar 10   21.734
+  bar 11   24.149
+  bar 12   26.564
+
+Detected beats (s): 0.60, 1.21, 1.80, 2.39, 3.01, 3.60, 4.20, 4.81, 5.40, 6.00, 6.59, 7.20, 7.80, 8.41, 9.01, 9.60, 10.19, 10.81, 11.40, 11.99, 12.59, 13.20, 13.80, 14.41, 15.00, 15.60, 16.20, 16.80, 17.39, 18.01, 18.60, 19.20, 19.80, 20.40, 21.00, 21.59, 22.20, 22.80, 23.41, 24.00, 24.60, 25.21, 25.80, 26.40, 26.99, 27.61, 28.20, 28.80
+
+Suggested chant points: bar 1 (0.000 s) and bar 7 (14.489 s) — used in the shots/funk-B-chant.mp3 test mix (adelay 50 ms / 14489 ms).
+Mix recipe: ffmpeg -i funk-B.wav -i chant.wav -filter_complex '[1]asplit[a][b];[a]adelay=50|50[x];[b]adelay=MS|MS[y];[x][y]amix=2:normalize=0,apad[c];[0][c]amix=2:normalize=0:duration=first,alimiter=limit=0.89'

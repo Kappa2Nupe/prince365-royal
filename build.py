@@ -42,6 +42,7 @@ scripts='''
 '''+live[live.index('<script>\naddEventListener("load"'):live.index('</body>')]
 out=head+'</head>'+bodyM[len('</head>'):lu_end]+'\n'+promo+body+'</main>\n'+bodyM[lu_end+len('</main>'):].replace('</body>','<script src="assets/royal.js"></script>\n'+scripts+'</body>')
 # remove the curtain-independent stray "</main>" duplicates
+out=out.replace('Event photos courtesy of the Prince 365 family.</p>','Event photos courtesy of the Prince 365 family.</p>\n  <p class="footer-legal">Opening music: <a href="https://freemusicarchive.org/music/mr-smith/kerplunk/funky-riboflavin/" target="_blank" rel="noopener">&ldquo;Funky Riboflavin&rdquo;</a> by <a href="https://freemusicarchive.org/music/mr-smith" target="_blank" rel="noopener">Mr Smith</a> (freemusicarchive.org/music/mr-smith), <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>')
 out=out.replace('w=Mixcloud.PlayerWidget(f);','w=window.p365Mix=Mixcloud.PlayerWidget(f);')
 out=out.replace('w.events.play.on(()=>{playing=true;','w.events.play.on(()=>{document.dispatchEvent(new Event("p365:mix"));playing=true;')
 out=out.replace('S.onclick=()=>{muted=!muted;','S.onclick=()=>{muted=!M.paused;')
