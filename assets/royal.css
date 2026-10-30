@@ -1,0 +1,31 @@
+/* Royal cinematic layer over the ported live-site sections */
+:root{--display:'Cormorant Garamond',Georgia,serif;--serif:'Cormorant Garamond',Georgia,serif}
+body{background-image:none;line-height:1.6}
+nav#nav{transition:background .3s}
+body.scrolledN nav#nav{background:rgba(7,2,12,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(245,197,66,.15)}
+nav .links a.act{background:rgba(245,197,66,.16);color:var(--gold2);opacity:1}
+main section:not(.rhero){padding-top:clamp(80px,12vw,140px)!important;padding-bottom:clamp(60px,9vw,120px)!important;scroll-margin-top:70px}
+main section:not(.rhero)+section:not(.rhero){border-top:1px solid rgba(245,197,66,.10)}
+.eyebrow{font-family:Inter,system-ui,sans-serif!important;font-size:12px!important;font-weight:600;letter-spacing:.32em!important;color:var(--gold2)!important;text-shadow:none!important}
+.h2{font-family:'Cormorant Garamond',Georgia,serif!important;font-weight:600;font-size:clamp(44px,9vw,104px)!important;line-height:.95!important;letter-spacing:-.01em!important}
+.neon-text{font-style:italic;color:transparent!important;text-shadow:none!important;background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 35%,#fff6d6 50%,var(--gold) 70%);-webkit-background-clip:text;background-clip:text}
+.big{font-size:clamp(17px,1.6vw,21px)!important;color:#e9dcf3!important;line-height:1.6}
+em{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.08em}
+.btn{font-family:Inter,system-ui,sans-serif!important;font-size:15px!important;font-weight:600;letter-spacing:.04em!important;padding:13px 24px!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn-ghost{border:1px solid rgba(253,243,255,.25)!important;background:rgba(253,243,255,.07);box-shadow:none!important}
+.marquee-wrap{border-color:rgba(245,197,66,.25)!important;background:linear-gradient(90deg,#2a0b45,#14051f,#2a0b45)!important}
+.marquee span{font-family:'Cormorant Garamond',serif!important;font-style:italic;letter-spacing:.02em!important}
+.marquee i{color:var(--gold)}
+.cd-num{font-family:'Cormorant Garamond',serif!important;font-weight:600;color:var(--gold2)!important;text-shadow:0 0 30px rgba(245,197,66,.25)!important}
+img{border-radius:inherit}
+figure img,.ep img,.duo img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){figure:hover img{transform:scale(1.03)}}
+.r-up{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.r-up.r-in{opacity:1;transform:none}
+/* promo section */
+.promo-inner{max-width:1200px;margin:0 auto;padding:0 22px;display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.promo-inner{grid-template-columns:1fr 1.3fr}}
+.promo .tv{margin:0 auto;width:100%}
+.lightbox{background:rgba(7,2,12,.94)!important;backdrop-filter:blur(8px)}
+.footer .never{font-family:'Cormorant Garamond',serif!important;font-style:italic}
+@media(prefers-reduced-motion:reduce){.r-up{opacity:1;transform:none}}

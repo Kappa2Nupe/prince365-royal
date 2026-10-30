@@ -3,7 +3,9 @@
 <title>Prince 365 Presents 508 · 365 Small Club · The Epic Sequel</title>
 <meta name="theme-color" content="#07020c">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=VT323&family=Playfair+Display:ital,wght@1,700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/live.css">
+<link rel="stylesheet" href="assets/royal.css">
 <style>
 :root{--ink:#07020c;--night:#14051f;--plum:#2a0b45;--purple:#7b2cbf;--violet:#b15cff;--neon:#d77bff;--gold:#f5c542;--gold2:#ffdf7e;--cream:#fdf3ff;--muted:#b9a6c9}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -19,18 +21,18 @@ nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;jus
 .menu{display:none;width:42px;height:42px;border-radius:50%;background:rgba(20,5,31,.4);border:1px solid rgba(253,243,255,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--cream);font-size:18px}
 @media(max-width:760px){.links{display:none;position:absolute;top:calc(env(safe-area-inset-top) + 64px);right:16px;flex-direction:column;border-radius:20px;background:rgba(20,5,31,.85)}.links.open{display:flex}.menu{display:block}}
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.rhero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 #fx{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
 .bg{position:absolute;inset:0;z-index:-4;background:radial-gradient(120% 70% at 50% 15%,#3b0f63 0%,var(--night) 45%,var(--ink) 100%)}
 .shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(7,2,12,.2) 0%,rgba(7,2,12,0) 30%,rgba(7,2,12,.55) 62%,var(--ink) 100%)}
-.poster{position:absolute;z-index:-1;left:50%;top:calc(env(safe-area-inset-top) + 60px);width:min(33vw,300px);aspect-ratio:1037/1600;transform:translate(-50%,0) rotate(-3deg);border-radius:14px;overflow:hidden;box-shadow:0 30px 90px rgba(123,44,191,.55),0 0 0 1px rgba(245,197,66,.35);will-change:transform}
-.poster img{width:100%;height:100%;object-fit:cover;display:block}
-.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,223,126,.35) 50%,transparent 65%);transform:translateX(-120%);animation:glint 6s 3s ease-in-out infinite}
+.rposter{position:absolute;z-index:-1;left:50%;top:calc(env(safe-area-inset-top) + 60px);width:min(33vw,300px);aspect-ratio:1037/1600;transform:translate(-50%,0) rotate(-3deg);border-radius:14px;overflow:hidden;box-shadow:0 30px 90px rgba(123,44,191,.55),0 0 0 1px rgba(245,197,66,.35);will-change:transform}
+.rposter img{width:100%;height:100%;object-fit:cover;display:block}
+.rposter:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,223,126,.35) 50%,transparent 65%);transform:translateX(-120%);animation:glint 6s 3s ease-in-out infinite}
 @keyframes glint{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
 .copy{padding:0 22px calc(env(safe-area-inset-bottom) + 34px);max-width:1200px;margin:0 auto;width:100%}
-.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2)}
-.big{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:.8;font-size:clamp(130px,36vw,300px);line-height:.85;letter-spacing:-.04em;display:flex;margin:6px 0 4px}
-.big span{display:inline-block;background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 30%,#fff6d6 45%,var(--gold) 60%,#b8861c 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 5s linear infinite;filter:drop-shadow(0 6px 30px rgba(245,197,66,.25))}
+.reye{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2)}
+.rbig{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:.8;font-size:clamp(130px,36vw,300px);line-height:.85;letter-spacing:-.04em;display:flex;margin:6px 0 4px}
+.rbig span{display:inline-block;background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 30%,#fff6d6 45%,var(--gold) 60%,#b8861c 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 5s linear infinite;filter:drop-shadow(0 6px 30px rgba(245,197,66,.25))}
 @keyframes shim{to{background-position:-250% 0}}
 .sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,6.4vw,44px);line-height:1.1}
 .meta{margin-top:10px;font-size:14px;color:var(--muted);letter-spacing:.04em}
@@ -44,14 +46,14 @@ nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;jus
 .pill.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a0828;border-color:transparent;box-shadow:0 8px 30px rgba(245,197,66,.3)}
 .rev{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .go .rev{opacity:1;transform:none}
-.big .rev{transform:translateY(60%) scale(.9)}.go .big .rev{transform:none}
+.rbig .rev{transform:translateY(60%) scale(.9)}.go .rbig .rev{transform:none}
 
 /* film */
 .film{position:absolute;inset:0;z-index:-3;background:#14051f url(assets/stage-vertical.jpg) center/cover}
 .film video{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.25) saturate(1.2) contrast(1.08) brightness(.8)}
 .grade{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(123,44,191,.35),rgba(42,11,69,.2) 40%,rgba(7,2,12,.1));mix-blend-mode:color;pointer-events:none}
 .vig{position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 40%,rgba(0,0,0,.75) 100%)}
-.grain{position:absolute;inset:-50%;z-index:-2;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .5s steps(4) infinite}
+.rgrain{position:absolute;inset:-50%;z-index:-2;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .5s steps(4) infinite}
 @keyframes gr{0%{transform:translate(0,0)}25%{transform:translate(-5%,3%)}50%{transform:translate(4%,-4%)}75%{transform:translate(-3%,-2%)}}
 .flick{position:absolute;inset:0;z-index:-2;pointer-events:none;background:#fff6d6;opacity:0;animation:fl 3.7s infinite}
 @keyframes fl{0%,91%,100%{opacity:0}92%{opacity:.05}94%{opacity:.01}96%{opacity:.06}}
@@ -91,7 +93,7 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 .lu h2{font-family:"Cormorant Garamond",serif;font-size:clamp(44px,11vw,84px);line-height:.95;font-weight:500}.lu h2 em{color:var(--gold)}
 .lu p.lead{color:var(--muted);margin:14px 0 34px;max-width:520px;line-height:1.55}
 .cards{display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:760px){.card{aspect-ratio:4/5}.cards{grid-template-columns:repeat(3,1fr)}.copy{padding-bottom:60px}.poster{left:auto;right:8%;transform:rotate(-3deg);top:16%;width:min(30vw,380px)}}
+@media(min-width:760px){.card{aspect-ratio:4/5}.cards{grid-template-columns:repeat(3,1fr)}.copy{padding-bottom:60px}.rposter{left:auto;right:8%;transform:rotate(-3deg);top:16%;width:min(30vw,380px)}}
 .card{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:var(--plum);border:1px solid rgba(245,197,66,.18)}
 .card img{width:100%;height:100%;object-fit:cover;display:block}
 .card .t{position:absolute;inset:auto 0 0;padding:60px 20px 20px;background:linear-gradient(transparent,rgba(7,2,12,.92))}
@@ -102,33 +104,33 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 .quote{margin:46px 0 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(26px,7vw,44px);line-height:1.15;text-align:center}
 .foot{text-align:center;color:var(--muted);font-size:13px;margin-top:18px;letter-spacing:.06em}
 .rating{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:2px 8px;border-radius:4px;font-weight:600;margin-right:6px}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none!important}.rev{opacity:1;transform:none}.pol{opacity:.95}.grain,.flick{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none!important}.rev{opacity:1;transform:none}.pol{opacity:.95}.rgrain,.flick{display:none}}
 </style></head><body>
 <div class="curtain" id="curtain" aria-hidden="true"><div class="valance"></div><i class="l"></i><i class="r"></i><img src="assets/p365-studios-logo.png" alt=""><div class="enter"><button class="tap" id="tap">Tap to open <span aria-hidden="true">♪</span></button><button class="nosound" id="nosound">Enter without sound</button></div></div>
 <audio id="mus" src="assets/funk-opening.m4a" preload="auto" loop playsinline></audio>
 <button class="snd" id="snd" aria-label="Turn sound on" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="x" d="M16 9l6 6M22 9l-6 6"/></svg></button>
-<nav><a class="wm" href="#top"><img src="assets/p365-studios-logo-sm.png" alt="">Prince&nbsp;<b>365</b></a>
+<nav id="nav"><a class="wm" href="#top"><img src="assets/p365-studios-logo-sm.png" alt="">Prince&nbsp;<b>365</b></a>
 <button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
-<div class="links"><a href="#lineup">Event</a><a href="https://prince365.pages.dev/#history">Timeline</a><a href="https://prince365.pages.dev/#family">Family</a><a href="https://prince365.pages.dev/#clubhouse">Living Room</a></div></nav>
+<div class="links"><a href="#event">Event</a><a href="#dj">DJ</a><a href="#history">Timeline</a><a href="#clubhouse">Clubhouse</a><a href="#family">Family</a><a href="#community">Living Room</a><a href="#notify">Notify</a></div></nav>
 <main id="top">
-<section class="hero"><div class="bg"></div>
+<section class="rhero"><div class="bg"></div>
 <div class="film"><video id="vid" muted playsinline autoplay loop preload="auto" poster="assets/stage-vertical.jpg" aria-hidden="true"></video></div>
-<div class="grade"></div><canvas id="fx"></canvas><div class="vig"></div><div class="grain"></div><div class="flick"></div>
+<div class="grade"></div><canvas id="fx"></canvas><div class="vig"></div><div class="rgrain"></div><div class="flick"></div>
 <figure class="pol a"><img src="assets/hero-fitz-508.jpg" alt="Fitz in his Prince 365 jacket" style="object-position:50% 15%"></figure>
 <figure class="pol b"><img src="assets/tl-purple-lights-party.jpg" alt="Prince 365 family under purple lights"></figure>
 <figure class="pol c"><img src="assets/family-banquet-sm.jpg" alt="Prince 365 family banquet"></figure>
-<div class="poster" id="poster"><img src="assets/poster-2027-official.jpg" alt="Official poster: 365 Small Club, The Epic Sequel. Starring DJ Lenka Paris, music by Peter Bravestrong. Save the date June 1st 2027." fetchpriority="high"></div>
+<div class="rposter" id="poster"><img src="assets/poster-2027-official.jpg" alt="Official poster: 365 Small Club, The Epic Sequel. Starring DJ Lenka Paris, music by Peter Bravestrong. Save the date June 1st 2027." fetchpriority="high"></div>
 <div class="shade"></div>
 <div class="copy">
-<div class="eyebrow rev" style="transition-delay:.2s">Prince 365 Presents</div>
-<h1 class="big" aria-label="508"><span class="rev" style="transition-delay:.35s">5</span><span class="rev" style="transition-delay:.5s">0</span><span class="rev" style="transition-delay:.65s">8</span></h1>
+<div class="reye rev" style="transition-delay:.2s">Prince 365 Presents</div>
+<h1 class="rbig" aria-label="508"><span class="rev" style="transition-delay:.35s">5</span><span class="rev" style="transition-delay:.5s">0</span><span class="rev" style="transition-delay:.65s">8</span></h1>
 <div class="sub rev" style="transition-delay:.8s">365 Small Club · The Epic Sequel</div>
 <div class="meta rev" style="transition-delay:.9s"><b>June 1, 2027</b> · Smorgies Pub, formerly the 508</div>
 <div class="cd rev" style="transition-delay:1s" aria-label="Countdown to June 1, 2027, 8pm Central"><div><b id="d">–</b><small>Days</small></div><div><b id="h">–</b><small>Hrs</small></div><div><b id="m">–</b><small>Min</small></div><div><b id="s">–</b><small>Sec</small></div></div>
 <div class="btns rev" style="transition-delay:1.1s"><button class="pill gold" id="ics">Save the date</button><a class="pill" href="#lineup">See the lineup ↓</a></div>
 </div></section>
 <section class="lu" id="lineup">
-<div class="eyebrow">The lineup</div>
+<div class="reye">The lineup</div>
 <h2>One night.<br><em>508</em> once again.</h2>
 <p class="lead">Rated <span class="rating">F</span>for Funk. Tickets and info coming soon.</p>
 <div class="cards">
@@ -138,15 +140,896 @@ section.lu{padding:90px 22px 80px;max-width:1200px;margin:0 auto}
 </div>
 <p class="quote">“We gon' party like there ain't gon' be another 1”</p>
 <p class="foot">Prince 365 Studios · Prince 365 LLC</p>
-</section></main>
+</section>
+<section class="promo" id="promo"><div class="promo-inner"><div class="promo-copy"><p class="eyebrow reveal">Prince 365 Studios presents</p><h2 class="h2 reveal">The <span class="neon-text">Promo</span></h2><p class="big reveal">At Smorgies Pub (formerly the 508), <em>for one night it will be 508 once again.</em></p><button class="btn btn-gold" id="soundBtn" type="button"><span class="ico">🔊</span> <span class="lbl">Play with sound</span></button></div><div class="tv">
+      <div class="tv-frame">
+        <video id="heroVideo" class="tv-video" muted loop playsinline preload="none" poster="assets/hero-poster-logo.jpg">
+          <source src="assets/prince365-web.mp4" type="video/mp4">
+        </video>
+        <div class="vhs-osd vhs-tl"><span class="rec">●</span> PLAY ▶</div>
+        <div class="vhs-osd vhs-tl2" id="vhsClock">SP 00:00:00</div>
+        <div class="vhs-osd vhs-bl">JUN. 01 2027</div>
+        <div class="vhs-osd vhs-br">CH 508</div>
+        <div class="tv-glare"></div>
+        <button class="tap-sound" id="tapSound" type="button" aria-label="Turn sound on"><span class="ts-ring" aria-hidden="true"></span><span class="ts-ico" aria-hidden="true">🔊</span><span class="ts-lbl">Tap for sound</span></button>
+        <button class="mute-btn" id="muteBtn" type="button" aria-label="Unmute video" aria-pressed="false">
+          <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <img class="advisory" src="assets/purple-advisory.png" alt="Purple Advisory: Explicit Funk Content" width="720" height="467">
+    </div>
+  </div></section>
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-wrap"><div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>We gon' party like there ain't gon' be another 1</span><i>✦</i>
+    <span>Deep cuts all night</span><i>✦</i>
+    <span>Starring DJ Lenka Paris</span><i>✦</i>
+    <span>Music from the GOAT Peter Bravestrong</span><i>✦</i>
+    <span>Rated F for Funk</span><i>✦</i>
+    <span>We Never Close!</span><i>✦</i>
+    <span>We gon' party like there ain't gon' be another 1</span><i>✦</i>
+    <span>Deep cuts all night</span><i>✦</i>
+    <span>Starring DJ Lenka Paris</span><i>✦</i>
+    <span>Music from the GOAT Peter Bravestrong</span><i>✦</i>
+    <span>Rated F for Funk</span><i>✦</i>
+    <span>We Never Close!</span><i>✦</i>
+  </div>
+</div></div>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="countdown-sec" id="countdown">
+  <p class="eyebrow reveal">Until the doors of the 508 open again</p>
+  <div class="countdown reveal" id="cd" role="timer" aria-live="off">
+    <div class="cd-cell"><div class="cd-num" id="cdD">000</div><div class="cd-lbl">Days</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-cell"><div class="cd-num" id="cdH">00</div><div class="cd-lbl">Hours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-cell"><div class="cd-num" id="cdM">00</div><div class="cd-lbl">Minutes</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-cell"><div class="cd-num" id="cdS">00</div><div class="cd-lbl">Seconds</div></div>
+  </div>
+  <p class="cd-foot reveal">June 1st 2027 · Smorgies Pub, formerly the 508 · <span class="gold">Tickets and info coming soon. Do not hesitate.</span></p>
+</section>
+
+<!-- ============ THE EVENT ============ -->
+<section class="event" id="event">
+  <div class="event-grid">
+    <figure class="poster reveal" data-tilt>
+      <a href="assets/poster-2027-official.jpg" class="lb" data-caption="Official poster · 365 Small Club, The Epic Sequel · June 1st 2027">
+        <img src="assets/poster-2027-official.jpg" alt="Official Prince 365 Studios poster: 365 Small Club, The Epic Sequel. Back where it all began. Starring DJ Lenka Paris, music by Peter Bravestrong. Save the date June 1st 2027. PG-F for Funk." loading="lazy">
+      </a>
+      <figcaption>Now showing: the official poster</figcaption>
+    </figure>
+
+    <div class="event-copy">
+      <p class="eyebrow reveal">The Epic Sequel · Back where it all began</p>
+      <h2 class="h2 reveal">365 <span class="neon-text">Small Club</span></h2>
+      <p class="big reveal">Prince 365 Presents <strong>508</strong>. At <strong>Smorgies Pub</strong>, formerly the 508: for one night it will be <span class="gold">508 once again</span>.</p>
+
+      <ul class="facts reveal">
+        <li><span class="k">When</span><span class="v">June 1st 2027 <small>(save the date)</small></span></li>
+        <li><span class="k">Where</span><span class="v">Smorgies Pub (formerly the 508)</span></li>
+        <li><span class="k">Starring</span><span class="v">DJ Lenka Paris</span></li>
+        <li><span class="k">Music</span><span class="v">From the GOAT, Peter Bravestrong</span></li>
+        <li><span class="k">Vibe</span><span class="v">Deep cuts all night</span></li>
+        <li><span class="k">Host</span><span class="v">Fitz, The C.E.O., Prince 365 Studios</span></li>
+        <li><span class="k">Rating</span><span class="v">F for Funk</span></li>
+      </ul>
+
+      <blockquote class="tagline reveal">“We gon' party like there ain't gon' be another 1”</blockquote>
+
+      <figure class="host-badge reveal">
+        <a href="assets/founder-rodney-badge.jpg" class="lb" data-caption="Your host: Rodney Fitzgerald, Creator &amp; CEO">
+          <img src="assets/founder-rodney-badge.jpg" alt="Rodney Fitzgerald, Creator and CEO, on his Club Prince 365 badge" loading="lazy">
+        </a>
+        <figcaption><span class="k">Your host</span> Fitz, The C.E.O.</figcaption>
+      </figure>
+
+      <div class="map-card reveal">
+        <img src="assets/minnesota-508-map.jpg" alt="Neon Minnesota map with a 508 pin, a still from the promo video" loading="lazy">
+        <div class="map-pin"><span>508</span></div>
+        <p>Pin dropped. Minnesota.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DJ SPOTLIGHT ============ -->
+<section class="dj" id="dj">
+  <div class="spot" aria-hidden="true"></div>
+  <div class="dj-grid">
+    <div class="dj-visual reveal">
+      <div class="vinyl" aria-hidden="true"><div class="vinyl-label">LENKA<br><small>33⅓</small></div></div>
+      <figure class="dj-photo">
+        <img src="assets/dj-lenka-paris-real.jpg" alt="DJ Lenka Paris in a black leather jacket on a stairway" loading="lazy" style="object-position:60% 30%">
+      </figure>
+    </div>
+    <div class="dj-copy">
+      <p class="eyebrow reveal">Starring</p>
+      <h2 class="h2 reveal">DJ <span class="neon-text">Lenka Paris</span></h2>
+      <p class="big reveal">World famous, with an international following, and she lives right here in Minneapolis.</p>
+      <p class="shirt reveal">Have you had your <span class="lenka">Lenka</span> 2day?</p>
+      <div class="eq reveal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="live-mix reveal">
+        <p class="live-mix-k"><span class="live-dot"></span> DJ Lenka Paris · Live from Paisley Park</p>
+        <div class="mix-wrap">
+          <button class="mix-btn" id="mixBtn" type="button" aria-pressed="false" aria-label="Play DJ Lenka Paris live mix"><span class="mb-ico" aria-hidden="true">▶</span><span class="mb-lbl">Play</span></button>
+          <iframe id="lenkaMix" title="DJ Lenka Paris live from Paisley Park on Mixcloud" width="100%" height="60" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&amp;mini=1&amp;hide_artwork=1&amp;feed=%2Flenkaparis%2Flive-from-paisley-park-09052020%2F" frameborder="0" allow="encrypted-media; autoplay"></iframe>
+        </div>
+      </div>
+      <div class="duo reveal">
+        <img src="assets/fitz-and-lenka.jpg" alt="Fitz and DJ Lenka Paris together in front of the 508 neon sign" loading="lazy">
+        <div>
+          <p class="duo-k">Hosted by</p>
+          <p class="duo-v">Fitz</p>
+          <p class="duo-s">The C.E.O., Prince 365 Studios</p>
+          <p class="duo-s">Music from the GOAT <strong>Peter Bravestrong</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY / TIMELINE ============ -->
+<section class="history" id="history">
+  <div class="history-head">
+    <p class="eyebrow reveal">Previously on Prince 365</p>
+    <h2 class="h2 reveal">The <span class="neon-text">Timeline</span></h2>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-line" aria-hidden="true"><div class="tl-fill" id="tlFill"></div></div>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">★</div>
+      <div class="tl-card tl-family tl-began">
+        <div class="tl-body">
+          <p class="tl-kicker">The Beginning</p>
+          <h3>Where It All Began</h3>
+          <p class="tl-meta">Chi’Bal Mexican Kitchen</p>
+          <a href="assets/tl-chibal-began.jpg" class="lb tl-began-img" data-caption="Where it all began — Chi’Bal Mexican Kitchen"><img src="assets/tl-chibal-began.jpg" alt="Where it all began — Chi’Bal Mexican Kitchen" loading="lazy"></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">OG</div>
+      <div class="tl-card tl-family tl-oldschool">
+        <div class="tl-body">
+          <p class="tl-kicker">Throwbacks</p>
+          <h3>Old School</h3>
+          <div class="tl-gallery">
+            <a href="assets/tl-7801-audubon-group.jpg" class="lb" data-caption="7801 Audubon Road, Edina"><img src="assets/tl-7801-audubon-group.jpg" alt="7801 Audubon Road, Edina" loading="lazy"></a>
+            <a href="assets/tl-places-12.jpg" class="lb" data-caption="The 7801 Audubon Road sign and memorial fence"><img src="assets/tl-places-12.jpg" alt="The 7801 Audubon Road sign and memorial fence" loading="lazy"></a>
+            <a href="assets/tl-northrop-celebration.jpg" class="lb" data-caption="Prince a Celebration at Northrop"><img src="assets/tl-northrop-celebration.jpg" alt="Prince a Celebration at Northrop" loading="lazy"></a>
+            <a href="assets/tl-family-18.jpg" class="lb" data-caption="With the Mill City Music Festival 1999 poster"><img src="assets/tl-family-18.jpg" alt="With the Mill City Music Festival 1999 poster" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2018</div>
+      <div class="tl-card tl-2018">
+        <a href="assets/flyer-2018-web.jpg" class="tl-flyer lb" data-caption="2018 flyer · Prince / 365 A Celebration presents Late Night Pancakes Meet &amp; Greet">
+          <img src="assets/flyer-2018-web.jpg" alt="2018 flyer: Prince / 365 A Celebration presents Late Night Pancakes Meet and Greet" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Prince 365: A Celebration presents</p>
+          <h3>Late Night Pancakes Meet &amp; Greet <span class="stack" aria-hidden="true">🥞</span></h3>
+          <p class="tl-meta">Fri · April 20, 2018 · 11pm until…<br>Perkins Family Restaurant · 951 W 78th St, Chanhassen MN</p>
+          <p>An idea nobody had tried: a <strong>late-night, pancake-themed fan meet-and-greet</strong> that brought Prince's inner circle face to face with fans at a family diner during Celebration week.</p>
+          <p class="tl-small">In partnership with Purple Funk Fest, Purple Underground, Paisley 5 Dime and others.</p>
+          <details class="guests">
+            <summary>Special guests (8)</summary>
+            <ul>
+              <li><b>Kim Berry</b> Prince's personal hairstylist</li>
+              <li><b>Jacqui Thompson</b> Paisley Park employee / PRN Alumni Board</li>
+              <li><b>Duane Tudahl</b> Author, <i>The Purple Rain Studio Sessions</i></li>
+              <li><b>Laura Tiebert</b> Author, <i>The Rise of Prince</i></li>
+              <li><b>Donna Gregory</b> Mayte's hairstylist</li>
+              <li><b>Chris Horton</b> Funkatopia DJ</li>
+              <li><b>Geneva</b> Former NPG dancer</li>
+              <li><b>David Hampton</b> Former Paisley Park technical director</li>
+            </ul>
+          </details>
+          <p class="tl-gallery-hint">16 photos · swipe for more →</p>
+          <div class="tl-gallery tl-gallery-scroll">
+            <a href="assets/tl-purple-underground-crew.jpg" class="lb" data-caption="Purple Underground crew"><img src="assets/tl-purple-underground-crew.jpg" alt="Purple Underground crew" loading="lazy"></a>
+            <a href="assets/tl-purple-underground-balloons.jpg" class="lb" data-caption="Purple Underground crew with purple balloons"><img src="assets/tl-purple-underground-balloons.jpg" alt="Purple Underground crew with purple balloons" loading="lazy"></a>
+            <a href="assets/tl-pancakes-exit-sign.jpg" class="lb" data-caption="Group by the EXIT sign"><img src="assets/tl-pancakes-exit-sign.jpg" alt="Group by the EXIT sign" loading="lazy"></a>
+            <a href="assets/tl-pancakes-balloon-closeup.jpg" class="lb" data-caption="Six smiling faces with a purple balloon behind"><img src="assets/tl-pancakes-balloon-closeup.jpg" alt="Six smiling faces with a purple balloon behind" loading="lazy"></a>
+            <a href="assets/tl-purple-cap-selfie.jpg" class="lb" data-caption="Selfie in a purple cap and lanyard"><img src="assets/tl-purple-cap-selfie.jpg" alt="Selfie in a purple cap and lanyard" loading="lazy"></a>
+            <a href="assets/tl-pancakes-signing-01.jpg" class="lb" data-caption="Book signing · Prince and the Purple Rain Era Studio Sessions"><img src="assets/tl-pancakes-signing-01.jpg" alt="Book signing · Prince and the Purple Rain Era Studio Sessions" loading="lazy"></a>
+            <a href="assets/tl-pancakes-signing-02.jpg" class="lb" data-caption="Book signing at the table"><img src="assets/tl-pancakes-signing-02.jpg" alt="Book signing at the table" loading="lazy"></a>
+            <a href="assets/tl-pancakes-signing-03.jpg" class="lb" data-caption="Book signing beside a plate of strawberries and purple whipped cream"><img src="assets/tl-pancakes-signing-03.jpg" alt="Book signing beside a plate of strawberries and purple whipped cream" loading="lazy"></a>
+            <a href="assets/tl-pancakes-signing-04.jpg" class="lb" data-caption="Signing a book, strawberry plate on the table"><img src="assets/tl-pancakes-signing-04.jpg" alt="Signing a book, strawberry plate on the table" loading="lazy"></a>
+            <a href="assets/tl-pancakes-signing-hug.jpg" class="lb" data-caption="A hug at the book signing"><img src="assets/tl-pancakes-signing-hug.jpg" alt="A hug at the book signing" loading="lazy"></a>
+            <a href="assets/tl-pancakes-denim-01.jpg" class="lb" data-caption="Denim jacket with pins and a Celebration 2018 shirt, with the Prince book"><img src="assets/tl-pancakes-denim-01.jpg" alt="Denim jacket with pins and a Celebration 2018 shirt, with the Prince book" loading="lazy"></a>
+            <a href="assets/tl-pancakes-denim-hug.jpg" class="lb" data-caption="A hug with the denim jacket covered in pins"><img src="assets/tl-pancakes-denim-hug.jpg" alt="A hug with the denim jacket covered in pins" loading="lazy"></a>
+            <a href="assets/tl-pancakes-denim-02.jpg" class="lb" data-caption="Denim jacket with pins and a Celebration 2018 shirt"><img src="assets/tl-pancakes-denim-02.jpg" alt="Denim jacket with pins and a Celebration 2018 shirt" loading="lazy"></a>
+            <a href="assets/tl-pancakes-book-01.jpg" class="lb" data-caption="Pointing out Prince and the Purple Rain Era Studio Sessions"><img src="assets/tl-pancakes-book-01.jpg" alt="Pointing out Prince and the Purple Rain Era Studio Sessions" loading="lazy"></a>
+            <a href="assets/tl-pancakes-book-02.jpg" class="lb" data-caption="Holding Prince and the Purple Rain Era Studio Sessions"><img src="assets/tl-pancakes-book-02.jpg" alt="Holding Prince and the Purple Rain Era Studio Sessions" loading="lazy"></a>
+            <a href="assets/tl-pancakes-book-03.jpg" class="lb" data-caption="Watching a book signing"><img src="assets/tl-pancakes-book-03.jpg" alt="Watching a book signing" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2019</div>
+      <div class="tl-card tl-2019">
+        <div class="tl-neon" aria-hidden="true"><span class="neon-508 small" data-text="508">508</span></div>
+        <div class="tl-body">
+          <p class="tl-kicker">The original</p>
+          <h3>The Epic Party at the 508</h3>
+          <p>The night fans <strong>still talk about</strong>. Prince 365 took over the 508, and nobody has forgotten it.</p>
+          <div class="tl-gallery">
+            <a href="assets/tl-play-in-the-sunshine-2019.jpg" class="lb" data-caption="Play in the Sunshine Day Party at Bunkers · DJ Dudley D · June 1, 4–8pm (replaced Party before the Park 2019)"><img src="assets/tl-play-in-the-sunshine-2019.jpg" alt="Play in the Sunshine Day Party at Bunkers · DJ Dudley D · June 1, 4–8pm (replaced Party before the Park 2019)" loading="lazy"></a>
+            <a href="assets/tl-tyka-nelson-perkins-2019.jpg" class="lb" data-caption="Tyka Nelson shoutout at Perkins · Apr 25, 2019"><img src="assets/tl-tyka-nelson-perkins-2019.jpg" alt="Tyka Nelson shoutout at Perkins · Apr 25, 2019" loading="lazy"></a>
+            <a href="assets/tl-purple-pancakes-part-deux-2019.jpg" class="lb" data-caption="Perkins Purple Pancakes Part Deux · Fri Apr 26, 2019 · 11pm–5am · 951 W 78th St"><img src="assets/tl-purple-pancakes-part-deux-2019.jpg" alt="Perkins Purple Pancakes Part Deux · Fri Apr 26, 2019 · 11pm–5am · 951 W 78th St" loading="lazy"></a>
+            <a href="assets/tl-podcastjuice-2019.jpg" class="lb" data-caption="PodcastJuice live podcast recording at Purple Pancakes Part Deux · Apr 26, 2019 · 1am"><img src="assets/tl-podcastjuice-2019.jpg" alt="PodcastJuice live podcast recording at Purple Pancakes Part Deux · Apr 26, 2019 · 1am" loading="lazy"></a>
+            <a href="assets/tl-prn-alumni-coffee-2019.jpg" class="lb" data-caption="Two alumni from the University of PRN — coffee and conversation, Oct 29, 2019"><img src="assets/tl-prn-alumni-coffee-2019.jpg" alt="Two alumni from the University of PRN — coffee and conversation, Oct 29, 2019" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2020</div>
+      <div class="tl-card tl-2020">
+        <a href="assets/tl-sold-out-2020.jpg" class="tl-flyer lb" data-caption="Sold out! 508, Perkins &amp; Chanhassen Cinema">
+          <img src="assets/tl-sold-out-2020.jpg" alt="Sold out! 508, Perkins &amp; Chanhassen Cinema" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Posted 2020</p>
+          <h3>Sold Out!</h3>
+          <div class="tl-gallery">
+            <a href="assets/tl-tbt-family-2020.jpg" class="lb" data-caption="TBT… Family · posted May 14, 2020"><img src="assets/tl-tbt-family-2020.jpg" alt="TBT… Family · posted May 14, 2020" loading="lazy"></a>
+            <a href="assets/tl-family-19.jpg" class="lb" data-caption="Prince 365 on the Chanhassen Cinema marquee"><img src="assets/tl-family-19.jpg" alt="Prince 365 on the Chanhassen Cinema marquee" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">Club<br>365</div>
+      <div class="tl-card tl-club">
+        <div class="tl-duo-photos">
+          <a href="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" class="lb" data-caption="Club Prince 365 Minneapolis Takeover · October 21st–24th 2021 · Remember, We Never Close"><img src="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" alt="Club Prince 365 Minneapolis Takeover badges, October 21st-24th 2021" loading="lazy"></a>
+          <a href="assets/family-hotel.jpg" class="lb" data-caption="Prince 365 Clubhouse community · Los Angeles trip"><img src="assets/family-hotel-sm.jpg" alt="Prince 365 Clubhouse community on a Los Angeles trip" loading="lazy"></a>
+        </div>
+        <div class="tl-body">
+          <p class="tl-kicker">The movement</p>
+          <h3>From a party to a community</h3>
+          <p>Prince 365 grew into a <strong>Clubhouse community</strong>, and the conversation went on the road: <strong>fan trips Rodney curated to Minneapolis and Los Angeles</strong>, including the <strong>Club Prince 365 Minneapolis Takeover, October 21st–24th 2021</strong>, and a movie theater outing at Chanhassen Cinema with PRINCE 365 up on the marquee. Online, the group pulled off <strong>a legendary 18-hour Prince Clubhouse event</strong>, remembered in December 2023 with <em>Purple All Night Part Deux</em>.</p>
+          <div class="la-itin">
+            <a href="assets/clubhouse-29-california-love-la-itinerary.jpg" class="lb la-thumb" data-caption="“California Love”: Club Prince 365 Los Angeles itinerary, October 19–22"><img src="assets/clubhouse-29-california-love-la-itinerary.jpg" alt="California Love: Club Prince 365 Los Angeles trip itinerary poster, October 19 to 22" loading="lazy"></a>
+            <div>
+              <p class="la-title">“California Love” · L.A. takeover · Oct 19–22</p>
+              <ul>
+                <li><b>Oct 19</b> Grammy Museum · Academy of Motion Pictures · Fanny's Restaurant · Conversation &amp; Libations</li>
+                <li><b>Oct 20</b> Breakfast at Metro Cafe · Warner Bros Tour · Hangout @ Proud Bird · Beverly Hills, Rodeo Drive, La Brea Tar Pits, Santa Monica Pier, Amoeba Records, Sunset Sound</li>
+                <li><b>Oct 21</b> Purple Rain locations tour: Apollonia's place, Morris' apartment, Morris in front of the club (The Wiltern), the Kid riding up to his mom's, The Taste · special event in Glendale · party at Karrie's house</li>
+                <li><b>Oct 22</b> Lunch &amp; group picture at The Grove · drinks at the Library Bar · Clubhouse Live</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#clubhouse" class="btn btn-ghost btn-sm">Clubhouse episodes</a> <a href="#family" class="btn btn-ghost btn-sm">See the family</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2021</div>
+      <div class="tl-card tl-2021">
+        <a href="assets/tl-clubhouse-wally-safford-2021.jpg" class="tl-flyer lb" data-caption="Prince 365 Clubhouse discussion with Wally Safford · Sun Mar 7, 2021 · 7pm EST">
+          <img src="assets/tl-clubhouse-wally-safford-2021.jpg" alt="Prince 365 Clubhouse discussion with Wally Safford · Sun Mar 7, 2021 · 7pm EST" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">The Clubhouse era</p>
+          <h3>Club Prince 365 on Clubhouse</h3>
+          <p class="tl-meta">Clubhouse rooms &amp; the Minneapolis weekend · Oct 21–24, 2021</p>
+          <div class="tl-gallery">
+            <a href="assets/tl-club365-episode7-2021.jpg" class="lb" data-caption="Club Prince 365 Episode #7 · “The Album No One Talks About” · Sunday 25th, 4pm EST"><img src="assets/tl-club365-episode7-2021.jpg" alt="Club Prince 365 Episode #7 · “The Album No One Talks About” · Sunday 25th, 4pm EST" loading="lazy"></a>
+            <a href="assets/tl-mr-nelson-north-side-2021.jpg" class="lb" data-caption="Clubhouse living-room conversation with Mr. Nelson on the North Side director Daniel D&#x27;Or and Nelly J · Sun 10/3, 4pm EST"><img src="assets/tl-mr-nelson-north-side-2021.jpg" alt="Clubhouse living-room conversation with Mr. Nelson on the North Side director Daniel D&#x27;Or and Nelly J · Sun 10/3, 4pm EST" loading="lazy"></a>
+            <a href="assets/tl-club365-weekend-itinerary-2021.jpg" class="lb" data-caption="Club Prince 365 Weekend itinerary · 10/21–10/22/2021 · Eden Prairie, Paisley Park Ultimate Tour, Purple Party at Cafe Thyme with DJ Brother Jules"><img src="assets/tl-club365-weekend-itinerary-2021.jpg" alt="Club Prince 365 Weekend itinerary · 10/21–10/22/2021 · Eden Prairie, Paisley Park Ultimate Tour, Purple Party at Cafe Thyme with DJ Brother Jules" loading="lazy"></a>
+            <a href="assets/tl-club365-badges-2021.jpg" class="lb" data-caption="Club Prince 365 Meet &amp; Greet badges · Minneapolis · Oct 21–24, 2021"><img src="assets/tl-club365-badges-2021.jpg" alt="Club Prince 365 Meet &amp; Greet badges · Minneapolis · Oct 21–24, 2021" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2023</div>
+      <div class="tl-card tl-2023">
+        <a href="assets/tl-purple-versus-bsides-finals-2023.jpg" class="tl-flyer lb" data-caption="Purple Versus Finals: best B-side ever · Erotic City vs She&#x27;s Always in My Hair · 17 Days vs Round 1 winner · 2/19/2023 · 4pm EST">
+          <img src="assets/tl-purple-versus-bsides-finals-2023.jpg" alt="Purple Versus Finals: best B-side ever · Erotic City vs She&#x27;s Always in My Hair · 17 Days vs Round 1 winner · 2/19/2023 · 4pm EST" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Purple Versus &amp; TAFKAP</p>
+          <h3>Purple Versus &amp; the TAFKAP Party</h3>
+          
+          <div class="tl-gallery">
+            <a href="assets/tl-greatest-love-song-2023.jpg" class="lb" data-caption="The Greatest Love Song: which should be #1? · 2/26/23 · 4pm EST"><img src="assets/tl-greatest-love-song-2023.jpg" alt="The Greatest Love Song: which should be #1? · 2/26/23 · 4pm EST" loading="lazy"></a>
+            <a href="assets/tl-tafkap-party-2023.jpg" class="lb" data-caption="TAFKAP Party by Prince 365 with DJ Lenka Paris · June 7, 2023 · 10pm · Chanhassen Brewery"><img src="assets/tl-tafkap-party-2023.jpg" alt="TAFKAP Party by Prince 365 with DJ Lenka Paris · June 7, 2023 · 10pm · Chanhassen Brewery" loading="lazy"></a>
+            <a href="assets/tl-purple-versus-5-7-23.jpg" class="lb" data-caption="Purple Versus · Somebody&#x27;s Somebody vs Shhh · Love 2 the 9s vs Damn U · 5/7/23 @ 4pm EST · Only on Clubhouse"><img src="assets/tl-purple-versus-5-7-23.jpg" alt="Purple Versus · Somebody&#x27;s Somebody vs Shhh · Love 2 the 9s vs Damn U · 5/7/23 @ 4pm EST · Only on Clubhouse" loading="lazy"></a>
+            <a href="assets/tl-purple-versus-dolphin.jpg" class="lb" data-caption="Purple Versus · Dolphin vs Eye Wish U Heaven · The Morning Papers vs I Can&#x27;t Make You Love Me"><img src="assets/tl-purple-versus-dolphin.jpg" alt="Purple Versus · Dolphin vs Eye Wish U Heaven · The Morning Papers vs I Can&#x27;t Make You Love Me" loading="lazy"></a>
+            <a href="assets/tl-bsides-sex-vs-escape.jpg" class="lb" data-caption="B-Sides Purple Versus · Sex vs Escape · 2 Whom It May Concern vs Call the Law · Clubhouse, 4pm"><img src="assets/tl-bsides-sex-vs-escape.jpg" alt="B-Sides Purple Versus · Sex vs Escape · 2 Whom It May Concern vs Call the Law · Clubhouse, 4pm" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year">2024</div>
+      <div class="tl-card tl-2024">
+        <a href="assets/tl-odonovans-meetup-2024.jpg" class="tl-flyer lb" data-caption="365 Meet Up at O&#x27;Donovan&#x27;s Pub across from First Avenue · Celebration 2024 · 6/22/24 · 2pm">
+          <img src="assets/tl-odonovans-meetup-2024.jpg" alt="365 Meet Up at O&#x27;Donovan&#x27;s Pub across from First Avenue · Celebration 2024 · 6/22/24 · 2pm" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Celebration 2024</p>
+          <h3>365 Meet Up at O'Donovan's Pub</h3>
+          <p class="tl-meta">6/22/24 · 2pm · across from First Avenue</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">∞</div>
+      <div class="tl-card tl-more">
+        <a href="assets/tl-purple-perkins-trifecta.jpg" class="tl-flyer lb" data-caption="Purple Perkins return announcement · “It&#x27;s the Trifecta”">
+          <img src="assets/tl-purple-perkins-trifecta.jpg" alt="Purple Perkins return announcement · “It&#x27;s the Trifecta”" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Purple Versus, parties &amp; the family</p>
+          <h3>More Moments</h3>
+          
+          <div class="tl-gallery">
+            <a href="assets/tl-survived-bunkers-pancakes.jpg" class="lb" data-caption="“I Survived Bunkers, Pancakes &amp; Pajamas”"><img src="assets/tl-survived-bunkers-pancakes.jpg" alt="“I Survived Bunkers, Pancakes &amp; Pajamas”" loading="lazy"></a>
+            <a href="assets/tl-paisley-stage-panel.jpg" class="lb" data-caption="Paisley Park stage panel"><img src="assets/tl-paisley-stage-panel.jpg" alt="Paisley Park stage panel" loading="lazy"></a>
+            <a href="assets/tl-capitol-hill-dc.jpg" class="lb" data-caption="Capitol Hill, Washington DC"><img src="assets/tl-capitol-hill-dc.jpg" alt="Capitol Hill, Washington DC" loading="lazy"></a>
+            <a href="assets/tl-celebration-collage.jpg" class="lb" data-caption="Prince/365 A Celebration collage"><img src="assets/tl-celebration-collage.jpg" alt="Prince/365 A Celebration collage" loading="lazy"></a>
+            <a href="assets/tl-celebration-badge-card.jpg" class="lb" data-caption="Prince/365 A Celebration badge"><img src="assets/tl-celebration-badge-card.jpg" alt="Prince/365 A Celebration badge" loading="lazy"></a>
+            <a href="assets/tl-rodney-badge-lanyard.jpg" class="lb" data-caption="Rodney&#x27;s Prince/365 A Celebration badge"><img src="assets/tl-rodney-badge-lanyard.jpg" alt="Rodney&#x27;s Prince/365 A Celebration badge" loading="lazy"></a>
+            <a href="assets/tl-premier-facebook-page.jpg" class="lb" data-caption="Prince 365 · Home of the Premier Prince Facebook Page"><img src="assets/tl-premier-facebook-page.jpg" alt="Prince 365 · Home of the Premier Prince Facebook Page" loading="lazy"></a>
+            <a href="assets/tl-piano-microphone-listening-party.jpg" class="lb" data-caption="Piano and Microphone 1983 Listening Party — Prince/365 A Celebration with LoveSexyDC at Songbyrd Music House. Free RSVP on Eventbrite."><img src="assets/tl-piano-microphone-listening-party.jpg" alt="Piano and Microphone 1983 Listening Party — Prince/365 A Celebration with LoveSexyDC at Songbyrd Music House. Free RSVP on Eventbrite." loading="lazy"></a>
+            <a href="assets/tl-prince4ever-jacket.jpg" class="lb" data-caption="Prince 365 jacket, with Mayte Jannell"><img src="assets/tl-prince4ever-jacket.jpg" alt="Prince 365 jacket, with Mayte Jannell" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">∞</div>
+      <div class="tl-card tl-la">
+        <a href="assets/tl-club365-california.jpg" class="tl-flyer lb" data-caption="Club Prince 365 California">
+          <img src="assets/tl-club365-california.jpg" alt="Club Prince 365 California" loading="lazy">
+        </a>
+        <div class="tl-body">
+          <p class="tl-kicker">Club Prince 365 · California</p>
+          <h3>The L.A. Trip</h3>
+          <div class="tl-gallery">
+            <a href="assets/tl-family-05.jpg" class="lb" data-caption="L.A. rooftop at sunset"><img src="assets/tl-family-05.jpg" alt="L.A. rooftop at sunset" loading="lazy"></a>
+            <a href="assets/tl-family-06.jpg" class="lb" data-caption="L.A. rooftop group"><img src="assets/tl-family-06.jpg" alt="L.A. rooftop group" loading="lazy"></a>
+            <a href="assets/tl-la-takeover-poster.jpg" class="lb" data-caption="L.A. Takeover poster · Oct 19"><img src="assets/tl-la-takeover-poster.jpg" alt="L.A. Takeover poster · Oct 19" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">∞</div>
+      <div class="tl-card tl-family tl-people">
+        <div class="tl-body">
+          <p class="tl-kicker">With the family</p>
+          <h3>Photos</h3>
+          <p class="tl-meta">Celebrations, trips &amp; nights out</p>
+          <p class="tl-kicker tl-sub">The Family</p>
+          <div class="tl-gallery tl-family-group">
+            <a href="assets/tl-family-04.jpg" class="lb" data-caption="Group outside Hotel Amiel"><img src="assets/tl-family-04.jpg" alt="Group outside Hotel Amiel" loading="lazy"></a>
+            <a href="assets/tl-family-13.jpg" class="lb" data-caption="The whole crowd from the stage"><img src="assets/tl-family-13.jpg" alt="The whole crowd from the stage" loading="lazy"></a>
+            <a href="assets/tl-family-20.jpg" class="lb" data-caption="Family dinner"><img src="assets/tl-family-20.jpg" alt="Family dinner" loading="lazy"></a>
+            <a href="assets/tl-group-paisley-park.jpg" class="lb" data-caption="The group at Paisley Park"><img src="assets/tl-group-paisley-park.jpg" alt="The group at Paisley Park" loading="lazy"></a>
+            <a href="assets/tl-jackets-paisley-park.jpg" class="lb" data-caption="Prince 365 jackets at Paisley Park"><img src="assets/tl-jackets-paisley-park.jpg" alt="Prince 365 jackets at Paisley Park" loading="lazy"></a>
+            <a href="assets/tl-family-restaurant.jpg" class="lb" data-caption="The family gathered around long tables at a restaurant"><img src="assets/tl-family-restaurant.jpg" alt="The family gathered around long tables at a restaurant" loading="lazy"></a>
+            <a href="assets/tl-hells-kitchen-2018.jpg" class="lb" data-caption="Hell&#x27;s Kitchen, Minneapolis · dinner after the Funk N Roll weekend · Oct 15, 2018"><img src="assets/tl-hells-kitchen-2018.jpg" alt="Hell&#x27;s Kitchen, Minneapolis · dinner after the Funk N Roll weekend · Oct 15, 2018" loading="lazy"></a>
+            <a href="assets/tl-wally-2018.jpg" class="lb" data-caption="Celebration 2018 — We Miss You Wally"><img src="assets/tl-wally-2018.jpg" alt="Celebration 2018 — We Miss You Wally" loading="lazy"></a>
+          </div>
+          <p class="tl-kicker tl-sub">Faces of the family</p>
+          <div class="tl-gallery">
+            <a href="assets/tl-family-01.jpg" class="lb" data-caption="Red-light selfie"><img src="assets/tl-family-01.jpg" alt="Red-light selfie" loading="lazy"></a>
+            <a href="assets/tl-family-02.jpg" class="lb" data-caption="Red-light night"><img src="assets/tl-family-02.jpg" alt="Red-light night" loading="lazy"></a>
+            <a href="assets/tl-family-12.jpg" class="lb" data-caption="Night out"><img src="assets/tl-family-12.jpg" alt="Night out" loading="lazy"></a>
+            <a href="assets/tl-family-n01.jpg" class="lb" data-caption="Photo collage with friends"><img src="assets/tl-family-n01.jpg" alt="Photo collage with friends" loading="lazy"></a>
+            <a href="assets/tl-family-n11.jpg" class="lb" data-caption="Celebration lanyard selfie"><img src="assets/tl-family-n11.jpg" alt="Celebration lanyard selfie" loading="lazy"></a>
+            <a href="assets/tl-family-08.jpg" class="lb" data-caption="Celebration night"><img src="assets/tl-family-08.jpg" alt="Celebration night" loading="lazy"></a>
+            <a href="assets/tl-family-09.jpg" class="lb" data-caption="Backstage selfie"><img src="assets/tl-family-09.jpg" alt="Backstage selfie" loading="lazy"></a>
+            <a href="assets/tl-family-n06.jpg" class="lb" data-caption="Trio night out"><img src="assets/tl-family-n06.jpg" alt="Trio night out" loading="lazy"></a>
+            <a href="assets/tl-family-03.jpg" class="lb" data-caption="Hotel lobby hang"><img src="assets/tl-family-03.jpg" alt="Hotel lobby hang" loading="lazy"></a>
+            <a href="assets/tl-family-n10.jpg" class="lb" data-caption="Selfie under the purple tent"><img src="assets/tl-family-n10.jpg" alt="Selfie under the purple tent" loading="lazy"></a>
+            <a href="assets/tl-family-14.jpg" class="lb" data-caption="Fitz the C.E.O. jacket"><img src="assets/tl-family-14.jpg" alt="Fitz the C.E.O. jacket" loading="lazy"></a>
+            <a href="assets/tl-family-n07.jpg" class="lb" data-caption="Selfie with a friend"><img src="assets/tl-family-n07.jpg" alt="Selfie with a friend" loading="lazy"></a>
+            <a href="assets/tl-family-07.jpg" class="lb" data-caption="Catching up over a drink"><img src="assets/tl-family-07.jpg" alt="Catching up over a drink" loading="lazy"></a>
+            <a href="assets/tl-family-10.jpg" class="lb" data-caption="Friends of the family"><img src="assets/tl-family-10.jpg" alt="Friends of the family" loading="lazy"></a>
+            <a href="assets/tl-family-11.jpg" class="lb" data-caption="Party selfie"><img src="assets/tl-family-11.jpg" alt="Party selfie" loading="lazy"></a>
+            <a href="assets/tl-family-n08.jpg" class="lb" data-caption="Bowling alley selfie"><img src="assets/tl-family-n08.jpg" alt="Bowling alley selfie" loading="lazy"></a>
+            <a href="assets/tl-family-n09.jpg" class="lb" data-caption="Bowling alley selfie"><img src="assets/tl-family-n09.jpg" alt="Bowling alley selfie" loading="lazy"></a>
+            <a href="assets/tl-family-n13.jpg" class="lb" data-caption="Night out"><img src="assets/tl-family-n13.jpg" alt="Night out" loading="lazy"></a>
+            <a href="assets/tl-family-n14.jpg" class="lb" data-caption="Group shot"><img src="assets/tl-family-n14.jpg" alt="Group shot" loading="lazy"></a>
+            <a href="assets/tl-blues-alley.jpg" class="lb" data-caption="At Blues Alley"><img src="assets/tl-blues-alley.jpg" alt="At Blues Alley" loading="lazy"></a>
+            <a href="assets/tl-steve-parke-signing.jpg" class="lb" data-caption="Steve Parke Book Signing / Sing-Along w/ Mike Scott · June 20"><img src="assets/tl-steve-parke-signing.jpg" alt="Steve Parke Book Signing / Sing-Along w/ Mike Scott · June 20" loading="lazy"></a>
+            <a href="assets/tl-chanhassen-collage.jpg" class="lb" data-caption="Chanhassen selfie collage"><img src="assets/tl-chanhassen-collage.jpg" alt="Chanhassen selfie collage" loading="lazy"></a>
+            <a href="assets/tl-sunglasses-collage.jpg" class="lb" data-caption="Selfie collage"><img src="assets/tl-sunglasses-collage.jpg" alt="Selfie collage" loading="lazy"></a>
+            <a href="assets/tl-world-stage.jpg" class="lb" data-caption="At World Stage"><img src="assets/tl-world-stage.jpg" alt="At World Stage" loading="lazy"></a>
+            <a href="assets/tl-night-out-hat.jpg" class="lb" data-caption="Night out"><img src="assets/tl-night-out-hat.jpg" alt="Night out" loading="lazy"></a>
+            <a href="assets/tl-selfie-friend.jpg" class="lb" data-caption="Selfie with a friend"><img src="assets/tl-selfie-friend.jpg" alt="Selfie with a friend" loading="lazy"></a>
+            <a href="assets/tl-prince-portraits.jpg" class="lb" data-caption="Under the Prince portraits"><img src="assets/tl-prince-portraits.jpg" alt="Under the Prince portraits" loading="lazy"></a>
+            <a href="assets/tl-purple-lights-party.jpg" class="lb" data-caption="Party under purple lights"><img src="assets/tl-purple-lights-party.jpg" alt="Party under purple lights" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">∞</div>
+      <div class="tl-card tl-family tl-parody">
+        <div class="tl-body">
+          <p class="tl-kicker">Video</p>
+          <h3>The Parody</h3>
+          <p class="tl-meta">Posted on Instagram by @prince365celebrate · July 28, 2022</p>
+          <video class="tl-video" controls playsinline preload="none" poster="assets/parody-poster.jpg">
+            <source src="assets/parody.mp4" type="video/mp4">
+          </video>
+          <p>A Prince 365 parody. <a href="https://www.instagram.com/tv/CgiT3SdAjfZ/" target="_blank" rel="noopener">Watch on Instagram</a></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year club">∞</div>
+      <div class="tl-card tl-family tl-places">
+        <div class="tl-body">
+          <p class="tl-kicker">Places</p>
+          <h3>Minneapolis Pilgrimage</h3>
+          <div class="tl-gallery">
+            <a href="assets/tl-places-02.jpg" class="lb" data-caption="Riley Creek tunnel"><img src="assets/tl-places-02.jpg" alt="Riley Creek tunnel" loading="lazy"></a>
+            <a href="assets/tl-places-03.jpg" class="lb" data-caption="Selfie under the Prince mural in the Riley Creek tunnel"><img src="assets/tl-places-03.jpg" alt="Selfie under the Prince mural in the Riley Creek tunnel" loading="lazy"></a>
+            <a href="assets/tl-places-04.jpg" class="lb" data-caption="Paisley Park, 7801, lit purple"><img src="assets/tl-places-04.jpg" alt="Paisley Park, 7801, lit purple" loading="lazy"></a>
+            <a href="assets/tl-family-15.jpg" class="lb" data-caption="Paisley Park lit purple"><img src="assets/tl-family-15.jpg" alt="Paisley Park lit purple" loading="lazy"></a>
+            <a href="assets/tl-places-05.jpg" class="lb" data-caption="Paisley Park at night"><img src="assets/tl-places-05.jpg" alt="Paisley Park at night" loading="lazy"></a>
+            <a href="assets/tl-family-16.jpg" class="lb" data-caption="Prince wardrobe display on the Paisley Park soundstage"><img src="assets/tl-family-16.jpg" alt="Prince wardrobe display on the Paisley Park soundstage" loading="lazy"></a>
+            <a href="assets/tl-places-15.jpg" class="lb" data-caption="Prince&#x27;s star on the wall"><img src="assets/tl-places-15.jpg" alt="Prince&#x27;s star on the wall" loading="lazy"></a>
+            <a href="assets/tl-places-16.jpg" class="lb" data-caption="House at 3420"><img src="assets/tl-places-16.jpg" alt="House at 3420" loading="lazy"></a>
+            <a href="assets/tl-places-17.jpg" class="lb" data-caption="Security building"><img src="assets/tl-places-17.jpg" alt="Security building" loading="lazy"></a>
+            <a href="assets/tl-places-18.jpg" class="lb" data-caption="Revised floor plan, security bldg., 11/14/04"><img src="assets/tl-places-18.jpg" alt="Revised floor plan, security bldg., 11/14/04" loading="lazy"></a>
+            <a href="assets/tl-family-17.jpg" class="lb" data-caption="Under the Cherry Moon poster — on loan from Rodney Fitzgerald"><img src="assets/tl-family-17.jpg" alt="Under the Cherry Moon poster — on loan from Rodney Fitzgerald" loading="lazy"></a>
+            <a href="assets/tl-chanhassen-dinner.jpg" class="lb" data-caption="Family dinner in Chanhassen"><img src="assets/tl-chanhassen-dinner.jpg" alt="Family dinner in Chanhassen" loading="lazy"></a>
+            <a href="assets/tl-prince-mural-night.jpg" class="lb" data-caption="Prince mural at night"><img src="assets/tl-prince-mural-night.jpg" alt="Prince mural at night" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="tl-item reveal">
+      <div class="tl-year now">2027</div>
+      <div class="tl-card tl-2027">
+        <img class="tl-thumb" src="assets/poster-2027-official-sm.jpg" alt="Official 2027 poster thumbnail" loading="lazy">
+        <div class="tl-body">
+          <p class="tl-kicker">Coming soon · The Sequel</p>
+          <h3>365 Small Club, June 1st 2027</h3>
+          <p>Back where it all began. Smorgies Pub becomes the 508 once again, starring DJ Lenka Paris. <span class="gold">You know the rest…</span></p>
+          <div class="tl-gallery">
+            <a href="assets/tl-508-sequel-bsides-2027.jpg" class="lb" data-caption="508 the Sequel: The B-Sides/Deep Cuts · The Musical Stylings of Peter Bravestrong"><img src="assets/tl-508-sequel-bsides-2027.jpg" alt="508 the Sequel: The B-Sides/Deep Cuts · The Musical Stylings of Peter Bravestrong" loading="lazy"></a>
+          </div>
+          <a href="#notify" class="btn btn-gold btn-sm">Don't miss it</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ABOUT THE FOUNDER ============ -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <figure class="founder-photo reveal">
+      <img src="assets/founder-rodney-headshot.jpg" alt="Headshot of Rodney Fitzgerald, Creator and CEO of Prince 365" loading="lazy">
+      <figcaption>Rodney Fitzgerald · Creator &amp; CEO</figcaption>
+    </figure>
+    <div class="founder-copy reveal">
+      <p class="eyebrow">About the founder</p>
+      <h2 class="h2 founder-h2">Rodney Fitzgerald <span class="gold">aka Fitz, The C.E.O.</span></h2>
+      <p class="founder-tag">Purple Pundit | Creator of Prince 365 | Host of Club Prince 365 Clubhouse Podcast | Retro Gamer | Child of Hip Hop &amp; House | Grew up at a HBCU | Found Heaven 4 the 2nd time | Made in K A Ψ | CowboyNation 4 Life</p>
+      <p>Rodney Fitzgerald is the CEO and creator of <strong>Prince 365 LLC</strong>. Prince 365 is a social group dedicated to celebrating the legacy of Prince, hosting events and discussions around his music and influence.</p>
+      <p>He organizes events and manages brand marketing for music fan clubs, has facilitated excursions in cities like <strong>Minneapolis</strong> and <strong>Los Angeles</strong>, and hosts Q&amp;A sessions with notable figures. He is the host of the <strong>Club Prince 365</strong> Clubhouse podcast, “The Premiere Prince Clubhouse Group,” and also creates media content related to Prince.</p>
+      <ul class="founder-facts">
+        <li><span>Based in</span>Washington, DC</li>
+        <li><span>Company</span>Prince 365 LLC</li>
+        <li><span>Podcast</span>Club Prince 365 on Clubhouse</li>
+      </ul>
+      <div class="founder-links">
+        <a class="btn btn-gold btn-sm" href="https://www.instagram.com/prince365celebrate/" target="_blank" rel="noopener">📸 @prince365celebrate on Instagram</a>
+        <a class="btn btn-ghost btn-sm" href="#clubhouse">Club Prince 365 episodes</a>
+      </div>
+    </div>
+  </div>
+    <div class="bio-sub founder-fampanel reveal" id="fampanel">
+      <h3 class="h2 bio-h3">Prince Celebration Guest <span class="gold">— Fam Panel 2023</span></h3>
+      <p class="bio-meta">Celebration 2023 · June 10, 2023 · Paisley Park</p>
+      <div class="bio-gallery">
+        <a href="assets/bio-fampanel-flyer.jpg" class="lb" data-caption="Meet the Fam Panel flyers · Celebration 2023 at Paisley Park"><img src="assets/bio-fampanel-flyer.jpg" alt="Meet the Fam Panel flyers · Celebration 2023 at Paisley Park" loading="lazy"></a>
+        <a href="assets/bio-fampanel-group.jpg" class="lb" data-caption="The Fam Panel guests with their Celebration lanyards"><img src="assets/bio-fampanel-group.jpg" alt="The Fam Panel guests with their Celebration lanyards" loading="lazy"></a>
+        <a href="assets/bio-fampanel-stage.jpg" class="lb" data-caption="The Fam Panel on stage"><img src="assets/bio-fampanel-stage.jpg" alt="The Fam Panel on stage" loading="lazy"></a>
+      </div>
+      <p class="bio-label">Panelists</p>
+      <ul class="bio-names"><li>Rodney Fitzgerald</li><li>De Angela Duff</li><li>Dr. Funkenberry</li><li>Casey Rain</li><li>Kim Camilia</li></ul>
+    </div>
+</section>
+
+<!-- ============ CLUBHOUSE ============ -->
+<section class="clubhouse" id="clubhouse">
+  <div class="ch-head">
+    <p class="eyebrow reveal">2021 – 2024 · Sundays (and Saturdays) in the living room</p>
+    <h2 class="h2 reveal">Club Prince 365 on Clubhouse: <span class="neon-text">The Purple Army Meeting Place</span></h2>
+    <p class="big reveal ch-lede">The podcast-style rooms where Prince 365 met every week: episodes, special guests, Purple Versus battles, trips and mixers. Tap any poster to see it full size.</p>
+    <div class="ch-handles reveal">
+      <a href="https://www.instagram.com/prince365celebrate/" target="_blank" rel="noopener">@prince365celebrate</a>
+      <a href="https://www.instagram.com/clubprince365/" target="_blank" rel="noopener">@clubprince365</a>
+      <span>on Instagram</span>
+    </div>
+  </div>
+
+  <div class="ch-feature reveal">
+    <a href="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" class="lb ch-feature-img" data-caption="Club Prince 365 badges: Rodney Fitzgerald, Creator &amp; CEO · Club Prince 365 Minneapolis Takeover, October 21st–24th 2021 · Remember, We Never Close"><img src="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" alt="Two Club Prince 365 lanyard badges: Rodney Fitzgerald, Creator and CEO, and Club Prince 365 Minneapolis Takeover, October 21st-24th 2021" loading="lazy"></a>
+    <div class="ch-feature-copy">
+      <p class="eyebrow">From the room to the road</p>
+      <h3>Club Prince 365 <span class="gold">Minneapolis Takeover</span></h3>
+      <p class="ch-feature-date">October 21st–24th 2021</p>
+      <p>The Premiere Prince Clubhouse Group took the conversation to Minneapolis and Paisley Park, with badges and all. <em>Remember, We Never Close.</em></p>
+      <p class="ch-feature-cred">Rodney Fitzgerald · Creator &amp; CEO, Club Prince 365</p>
+    </div>
+  </div>
+
+  <div class="ch-filters reveal" role="tablist" aria-label="Filter episodes">
+    <button class="chf on" data-f="all" role="tab" aria-selected="true">All <i>33</i></button>
+    <button class="chf" data-f="guests" role="tab" aria-selected="false">Special Guests <i>6</i></button>
+    <button class="chf" data-f="versus" role="tab" aria-selected="false">Purple Versus <i>13</i></button>
+    <button class="chf" data-f="discussions" role="tab" aria-selected="false">Discussions &amp; News <i>10</i></button>
+    <button class="chf" data-f="trips" role="tab" aria-selected="false">Trips &amp; Mixers <i>4</i></button>
+  </div>
+
+  <div class="ep-wall" id="epWall">
+      <div class="ep-year" data-year="2021"><span>2021</span></div>
+      <figure class="ep reveal" data-cat="discussions" data-year="2021">
+        <a href="assets/clubhouse-01-purple-army-meeting-place.jpg" class="lb ep-img" data-caption="Prince 365 Clubhouse: Tomorrow 2/27 · 9PM EST. The Purple Army meeting place."><img src="assets/clubhouse-01-purple-army-meeting-place.jpg" alt="Club Prince 365 Clubhouse: Prince 365 Clubhouse" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Tomorrow 2/27 · 9PM EST</span><b>Prince 365 Clubhouse</b><span class="ep-sub">The Purple Army meeting place.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2021">
+        <a href="assets/clubhouse-02-episode-7-album-no-one-talks-about.jpg" class="lb ep-img" data-caption="Club Prince 365 Episode #7: Sunday 25th · 4PM EST / 1PM PST. The album no one talks about. Only on the Clubhouse app."><img src="assets/clubhouse-02-episode-7-album-no-one-talks-about.jpg" alt="Club Prince 365 Clubhouse: Club Prince 365 Episode #7" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Sunday 25th · 4PM EST / 1PM PST</span><b>Club Prince 365 Episode #7</b><span class="ep-sub">The album no one talks about. Only on the Clubhouse app.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2021">
+        <a href="assets/clubhouse-03-episode-8-and-that-says-what.jpg" class="lb ep-img" data-caption="Clubhouse Prince 365 Episode #8: Sunday 5/2 · 4PM EST / 1PM PST. “…And That Says What”: let&#x27;s discuss the meaning behind some of Prince iconic songs. Via @prince365celebrate."><img src="assets/clubhouse-03-episode-8-and-that-says-what.jpg" alt="Club Prince 365 Clubhouse: Clubhouse Prince 365 Episode #8" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Sunday 5/2 · 4PM EST / 1PM PST</span><b>Clubhouse Prince 365 Episode #8</b><span class="ep-sub">“…And That Says What”: let's discuss the meaning behind some of Prince iconic songs. Via @prince365celebrate.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2021">
+        <a href="assets/clubhouse-18-purple-versus-tournament-live-room.jpg" class="lb ep-img" data-caption="Club Prince 365: Purple Versus Tournament: Live room. Live on Clubhouse with Tc, Rodney, Shayla, Violet, Rick, Jo, Tim, Ronlyn and David. Via @prince365celebrate."><img src="assets/clubhouse-18-purple-versus-tournament-live-room.jpg" alt="Club Prince 365 Clubhouse: Club Prince 365: Purple Versus Tournament" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Live room</span><b>Club Prince 365: Purple Versus Tournament</b><span class="ep-sub">Live on Clubhouse with Tc, Rodney, Shayla, Violet, Rick, Jo, Tim, Ronlyn and David. Via @prince365celebrate.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2021">
+        <a href="assets/clubhouse-05-clubhouse-prince365-2021.jpg" class="lb ep-img" data-caption="Clubhouse · Prince 365 · 2021: 2021. The 2021 Club Prince 365 Clubhouse mark."><img src="assets/clubhouse-05-clubhouse-prince365-2021.jpg" alt="Club Prince 365 Clubhouse: Clubhouse · Prince 365 · 2021" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">2021</span><b>Clubhouse · Prince 365 · 2021</b><span class="ep-sub">The 2021 Club Prince 365 Clubhouse mark.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="guests" data-year="2021">
+        <a href="assets/clubhouse-07-mr-nelson-on-the-north-side.jpg" class="lb ep-img" data-caption="Mr. Nelson on the North Side: Sunday 10/3 · 4PM EST. A living room conversation with the director and marketing consultant for the documentary: Daniel D&#x27;Or (Director) and Nelly J (Marketing Consultant)."><img src="assets/clubhouse-07-mr-nelson-on-the-north-side.jpg" alt="Club Prince 365 Clubhouse: Mr. Nelson on the North Side" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">Sunday 10/3 · 4PM EST</span><b>Mr. Nelson on the North Side</b><span class="ep-sub">A living room conversation with the director and marketing consultant for the documentary: Daniel D'Or (Director) and Nelly J (Marketing Consultant).</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="trips" data-year="2021">
+        <a href="assets/clubhouse-04-paisley-park-oct-2021.jpg" class="lb ep-img" data-caption="Clubhouse · Paisley Park · Prince365: Oct. 21–24 2021. We Never Close."><img src="assets/clubhouse-04-paisley-park-oct-2021.jpg" alt="Club Prince 365 Clubhouse: Clubhouse · Paisley Park · Prince365" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-trips">Trips &amp; Mixers</span><span class="ep-chip">Oct. 21–24 2021</span><b>Clubhouse · Paisley Park · Prince365</b><span class="ep-sub">We Never Close.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="trips" data-year="2021">
+        <a href="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" class="lb ep-img" data-caption="Club Prince 365 Minneapolis Takeover: October 21st–24th 2021. The badges: “Club Prince 365, The Premiere Prince Clubhouse Group, Rodney Fitzgerald, Creator &amp; CEO” and “Minneapolis Takeover… Remember, We Never Close.”"><img src="assets/clubhouse-17-club-prince365-badges-minneapolis-takeover.jpg" alt="Club Prince 365 Clubhouse: Club Prince 365 Minneapolis Takeover" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-trips">Trips &amp; Mixers</span><span class="ep-chip">October 21st–24th 2021</span><b>Club Prince 365 Minneapolis Takeover</b><span class="ep-sub">The badges: “Club Prince 365, The Premiere Prince Clubhouse Group, Rodney Fitzgerald, Creator &amp; CEO” and “Minneapolis Takeover… Remember, We Never Close.”</span></figcaption>
+      </figure>
+      <div class="ep-year" data-year="2022"><span>2022</span></div>
+      <figure class="ep reveal" data-cat="guests" data-year="2022">
+        <a href="assets/clubhouse-08-live-with-liv-warfield.jpg" class="lb ep-img" data-caption="Club Prince 365 Presents… Live with Liv Warfield: 1/30/22 · 2:00 PM EST. A Clubhouse pop up with the amazing Liv Warfield, w/ Rodney Fitzgerald, Rick Ammirati, Violet Brown, Tc Lynn, Shayla P., Kim Woods &amp; Ronlyn Dandy."><img src="assets/clubhouse-08-live-with-liv-warfield.jpg" alt="Club Prince 365 Clubhouse: Club Prince 365 Presents… Live with Liv Warfield" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">1/30/22 · 2:00 PM EST</span><b>Club Prince 365 Presents… Live with Liv Warfield</b><span class="ep-sub">A Clubhouse pop up with the amazing Liv Warfield, w/ Rodney Fitzgerald, Rick Ammirati, Violet Brown, Tc Lynn, Shayla P., Kim Woods &amp; Ronlyn Dandy.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="guests" data-year="2022">
+        <a href="assets/clubhouse-09-afshin-shahidi.jpg" class="lb ep-img" data-caption="Special Guest: Afshin Shahidi: 3/13 · 4PM EST. Prince: A Private View. Living Room Discussions, Club Prince 365. Only on Clubhouse."><img src="assets/clubhouse-09-afshin-shahidi.jpg" alt="Club Prince 365 Clubhouse: Special Guest: Afshin Shahidi" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">3/13 · 4PM EST</span><b>Special Guest: Afshin Shahidi</b><span class="ep-sub"><i>Prince: A Private View</i>. Living Room Discussions, Club Prince 365. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2022">
+        <a href="assets/clubhouse-10-love-4-one-another.jpg" class="lb ep-img" data-caption="Let&#x27;s discuss: Love 4 One Another: 5/22/22 · Sunday 4PM EST. Do we as fans live by this? Club Prince 365, the premiere Prince Clubhouse group. Only on Clubhouse."><img src="assets/clubhouse-10-love-4-one-another.jpg" alt="Club Prince 365 Clubhouse: Let&#x27;s discuss: Love 4 One Another" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">5/22/22 · Sunday 4PM EST</span><b>Let's discuss: Love 4 One Another</b><span class="ep-sub">Do we as fans live by this? Club Prince 365, the premiere Prince Clubhouse group. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="trips" data-year="2022">
+        <a href="assets/clubhouse-06-clubhouse-mixer-6-2022.jpg" class="lb ep-img" data-caption="Prince 365 Clubhouse Mixer: 6/2022. Clubhouse."><img src="assets/clubhouse-06-clubhouse-mixer-6-2022.jpg" alt="Club Prince 365 Clubhouse: Prince 365 Clubhouse Mixer" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-trips">Trips &amp; Mixers</span><span class="ep-chip">6/2022</span><b>Prince 365 Clubhouse Mixer</b><span class="ep-sub">Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="guests" data-year="2022">
+        <a href="assets/clubhouse-11-latoya-gaines.jpg" class="lb ep-img" data-caption="Special Guest: Latoya Gaines: Sundays @ 4PM EST. Next Sunday, only on Clubhouse. Club Prince 365."><img src="assets/clubhouse-11-latoya-gaines.jpg" alt="Club Prince 365 Clubhouse: Special Guest: Latoya Gaines" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">Sundays @ 4PM EST</span><b>Special Guest: Latoya Gaines</b><span class="ep-sub">Next Sunday, only on Clubhouse. Club Prince 365.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="guests" data-year="2022">
+        <a href="assets/clubhouse-12-monique-mannen-living-room-chat.jpg" class="lb ep-img" data-caption="A Living Room Chat with Monique Mannen: Sunday July 24th · 4PM EST. Only on Clubhouse."><img src="assets/clubhouse-12-monique-mannen-living-room-chat.jpg" alt="Club Prince 365 Clubhouse: A Living Room Chat with Monique Mannen" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">Sunday July 24th · 4PM EST</span><b>A Living Room Chat with Monique Mannen</b><span class="ep-sub">Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2022">
+        <a href="assets/clubhouse-13-purple-versus-b-sides-aug-7.jpg" class="lb ep-img" data-caption="Prince 365 Purple Versus: The B Sides: August 7th. Only on Clubhouse."><img src="assets/clubhouse-13-purple-versus-b-sides-aug-7.jpg" alt="Club Prince 365 Clubhouse: Prince 365 Purple Versus: The B Sides" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">August 7th</span><b>Prince 365 Purple Versus: The B Sides</b><span class="ep-sub">Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2022">
+        <a href="assets/clubhouse-14-purple-versus-feel-u-up.jpg" class="lb ep-img" data-caption="Purple Versus: 4:30 PM EST. Feel U Up vs Violet the Organ Grinder · Shockadelica vs Power Fantastic. Only on Clubhouse. Via @clubprince365."><img src="assets/clubhouse-14-purple-versus-feel-u-up.jpg" alt="Club Prince 365 Clubhouse: Purple Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">4:30 PM EST</span><b>Purple Versus</b><span class="ep-sub">Feel U Up vs Violet the Organ Grinder · Shockadelica vs Power Fantastic. Only on Clubhouse. Via @clubprince365.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2022">
+        <a href="assets/clubhouse-15-purple-versus-b-sides-nov-20.jpg" class="lb ep-img" data-caption="Prince 365 Presents Purple Versus: The B-Sides: November 20th · 4PM EST. Scarlet Pussy vs The Lubricated Lady · The Purple Medley vs Horny Pony · 17 Days vs Shockadelica."><img src="assets/clubhouse-15-purple-versus-b-sides-nov-20.jpg" alt="Club Prince 365 Clubhouse: Prince 365 Presents Purple Versus: The B-Sides" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">November 20th · 4PM EST</span><b>Prince 365 Presents Purple Versus: The B-Sides</b><span class="ep-sub">Scarlet Pussy vs The Lubricated Lady · The Purple Medley vs Horny Pony · 17 Days vs Shockadelica.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2022">
+        <a href="assets/clubhouse-16-live-room-purple-versus-b-sides.jpg" class="lb ep-img" data-caption="Club Prince 365: Purple Versus B sides: Live room. Live on Clubhouse: 57 in the room, 274 in the chat."><img src="assets/clubhouse-16-live-room-purple-versus-b-sides.jpg" alt="Club Prince 365 Clubhouse: Club Prince 365: Purple Versus B sides" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Live room</span><b>Club Prince 365: Purple Versus B sides</b><span class="ep-sub">Live on Clubhouse: 57 in the room, 274 in the chat.</span></figcaption>
+      </figure>
+      <div class="ep-year" data-year="2023"><span>2023</span></div>
+      <figure class="ep reveal" data-cat="discussions" data-year="2023">
+        <a href="assets/clubhouse-23-manic-monday-home-office.jpg" class="lb ep-img" data-caption="Tune In2 Clubhouse: Manic Monday: Early afternoon @ your desk. From the home office of Prince365."><img src="assets/clubhouse-23-manic-monday-home-office.jpg" alt="Club Prince 365 Clubhouse: Tune In2 Clubhouse: Manic Monday" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Early afternoon @ your desk</span><b>Tune In2 Clubhouse: Manic Monday</b><span class="ep-sub">From the home office of Prince365.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2023">
+        <a href="assets/clubhouse-24-manic-monday-only-on-clubhouse.jpg" class="lb ep-img" data-caption="Manic Monday: Monday. Only on Clubhouse."><img src="assets/clubhouse-24-manic-monday-only-on-clubhouse.jpg" alt="Club Prince 365 Clubhouse: Manic Monday" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Monday</span><b>Manic Monday</b><span class="ep-sub">Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2023">
+        <a href="assets/clubhouse-26-purple-versus-love-songs-7-16.jpg" class="lb ep-img" data-caption="Purple Versus Love Songs: 7/16 · 4pm EST. Eye Love U But I Don&#x27;t Trust U Anymore vs Eternity · Extraordinary vs ICNTTPOAN. Only on Clubhouse Prince 365."><img src="assets/clubhouse-26-purple-versus-love-songs-7-16.jpg" alt="Club Prince 365 Clubhouse: Purple Versus Love Songs" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">7/16 · 4pm EST</span><b>Purple Versus Love Songs</b><span class="ep-sub">Eye Love U But I Don't Trust U Anymore vs Eternity · Extraordinary vs ICNTTPOAN. Only on Clubhouse Prince 365.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2023">
+        <a href="assets/clubhouse-30-purple-all-night-part-deux.jpg" class="lb ep-img" data-caption="Purple All Night Part Deux: December 2023. Prince 365 &amp; Club Housequake present: remembering the 18 Hour Prince Clubhouse Event, dedicated to our beloved family member, Wally Safford. Hosted by Fitz &amp; Belgrave. Only on Clubhouse."><img src="assets/clubhouse-30-purple-all-night-part-deux.jpg" alt="Club Prince 365 Clubhouse: Purple All Night Part Deux" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">December 2023</span><b>Purple All Night Part Deux</b><span class="ep-sub">Prince 365 &amp; Club Housequake present: remembering the 18 Hour Prince Clubhouse Event, dedicated to our beloved family member, Wally Safford. Hosted by Fitz &amp; Belgrave. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <div class="ep-year" data-year="2024"><span>2024</span></div>
+      <figure class="ep reveal" data-cat="versus" data-year="2024">
+        <a href="assets/clubhouse-31-love-songs-broken-heart-1-13-24.jpg" class="lb ep-img" data-caption="Love Songs: Based on a Broken Heart: 1/13/24 · 2PM EST. And God Created Woman vs Damn U · Scandalous vs When 2 R N Luv. Another Clubhouse production by Prince 365."><img src="assets/clubhouse-31-love-songs-broken-heart-1-13-24.jpg" alt="Club Prince 365 Clubhouse: Love Songs: Based on a Broken Heart" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">1/13/24 · 2PM EST</span><b>Love Songs: Based on a Broken Heart</b><span class="ep-sub">And God Created Woman vs Damn U · Scandalous vs When 2 R N Luv. Another Clubhouse production by Prince 365.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2024">
+        <a href="assets/clubhouse-32-purple-versus-jan-20-2024.jpg" class="lb ep-img" data-caption="Purple Versus: Jan 20 2024 · 2:00 PM. Purple Rain vs International Lover · She&#x27;s Always In My Hair vs Call My Name. Only on Clubhouse."><img src="assets/clubhouse-32-purple-versus-jan-20-2024.jpg" alt="Club Prince 365 Clubhouse: Purple Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Jan 20 2024 · 2:00 PM</span><b>Purple Versus</b><span class="ep-sub">Purple Rain vs International Lover · She's Always In My Hair vs Call My Name. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2024">
+        <a href="assets/clubhouse-33-purple-versus-feb-3-2024.jpg" class="lb ep-img" data-caption="Purple Versus: Saturday February 3rd 2024 · 4pm EST. Do Me Baby vs Diamonds &amp; Pearls · The Beautiful Ones vs Venus De Milo. Only on Clubhouse."><img src="assets/clubhouse-33-purple-versus-feb-3-2024.jpg" alt="Club Prince 365 Clubhouse: Purple Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Saturday February 3rd 2024 · 4pm EST</span><b>Purple Versus</b><span class="ep-sub">Do Me Baby vs Diamonds &amp; Pearls · The Beautiful Ones vs Venus De Milo. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2024">
+        <a href="assets/clubhouse-34-purple-versus-feb-17-2024.jpg" class="lb ep-img" data-caption="Purple Versus: Saturday Feb. 17th 2024 · 4pm EST. ? of U vs Insatiable · The Morning Papers vs And God Created Woman. Only on Clubhouse."><img src="assets/clubhouse-34-purple-versus-feb-17-2024.jpg" alt="Club Prince 365 Clubhouse: Purple Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Saturday Feb. 17th 2024 · 4pm EST</span><b>Purple Versus</b><span class="ep-sub">? of U vs Insatiable · The Morning Papers vs And God Created Woman. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="guests" data-year="2024">
+        <a href="assets/clubhouse-19-phil-simms-art-of-collecting.jpg" class="lb ep-img" data-caption="Phil Simms: The Art of Collecting: Special time 2pm EST · Sunday July 7th. Only on Clubhouse."><img src="assets/clubhouse-19-phil-simms-art-of-collecting.jpg" alt="Club Prince 365 Clubhouse: Phil Simms: The Art of Collecting" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-guests">Special Guests</span><span class="ep-chip">Special time 2pm EST · Sunday July 7th</span><b>Phil Simms: The Art of Collecting</b><span class="ep-sub">Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2024">
+        <a href="assets/clubhouse-20-prince-celebration-2001-memories.jpg" class="lb ep-img" data-caption="Clubhouse Prince 365: Prince Celebration 2001 Memories: Sunday 7/21 · 4pm EST. Featuring the 2001 “Prince: A Celebration, the rainbow children” flyer."><img src="assets/clubhouse-20-prince-celebration-2001-memories.jpg" alt="Club Prince 365 Clubhouse: Clubhouse Prince 365: Prince Celebration 2001 Memories" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">Sunday 7/21 · 4pm EST</span><b>Clubhouse Prince 365: Prince Celebration 2001 Memories</b><span class="ep-sub">Featuring the 2001 “Prince: A Celebration, the rainbow children” flyer.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="discussions" data-year="2024">
+        <a href="assets/clubhouse-21-prince-news-7-28-24.jpg" class="lb ep-img" data-caption="Clubhouse Prince 365: Prince News: 7/28/24 · 4pm EST. Prince Rogers Nelson p/k/a Prince, inducted into the Songwriters Hall of Fame (July 27, 2024)."><img src="assets/clubhouse-21-prince-news-7-28-24.jpg" alt="Club Prince 365 Clubhouse: Clubhouse Prince 365: Prince News" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-discussions">Discussions &amp; News</span><span class="ep-chip">7/28/24 · 4pm EST</span><b>Clubhouse Prince 365: Prince News</b><span class="ep-sub">Prince Rogers Nelson p/k/a Prince, inducted into the Songwriters Hall of Fame (July 27, 2024).</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="2024">
+        <a href="assets/clubhouse-22-purple-versus-washington-dc.jpg" class="lb ep-img" data-caption="Purple Versus: 11 Nov · 1 PM EST. Adore vs Shhh · Satisfied vs Insatiable. Clubhouse, Washington D.C."><img src="assets/clubhouse-22-purple-versus-washington-dc.jpg" alt="Club Prince 365 Clubhouse: Purple Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">11 Nov · 1 PM EST</span><b>Purple Versus</b><span class="ep-sub">Adore vs Shhh · Satisfied vs Insatiable. Clubhouse, Washington D.C.</span></figcaption>
+      </figure>
+      <div class="ep-year" data-year="More"><span>More rooms <small>(year not on the poster)</small></span></div>
+      <figure class="ep reveal" data-cat="trips" data-year="More">
+        <a href="assets/clubhouse-29-california-love-la-itinerary.jpg" class="lb ep-img" data-caption="“California Love”: Club Prince 365 in L.A.: October 19–22. Grammy Museum, Academy of Motion Pictures, Warner Bros Tour, Purple Rain locations, The Grove group picture and Clubhouse Live."><img src="assets/clubhouse-29-california-love-la-itinerary.jpg" alt="Club Prince 365 Clubhouse: “California Love”: Club Prince 365 in L.A." loading="lazy"></a>
+        <figcaption><span class="ep-tag t-trips">Trips &amp; Mixers</span><span class="ep-chip">October 19–22</span><b>“California Love”: Club Prince 365 in L.A.</b><span class="ep-sub">Grammy Museum, Academy of Motion Pictures, Warner Bros Tour, Purple Rain locations, The Grove group picture and Clubhouse Live.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="More">
+        <a href="assets/clubhouse-27-365-love-songs-saturdays.jpg" class="lb ep-img" data-caption="365 Love Songs: New time Saturdays @ 4PM EST. Love Thy Will Be Done vs The Greatest Romance That Ever Been Sold · Adore vs The One. Only on Clubhouse."><img src="assets/clubhouse-27-365-love-songs-saturdays.jpg" alt="Club Prince 365 Clubhouse: 365 Love Songs" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">New time Saturdays @ 4PM EST</span><b>365 Love Songs</b><span class="ep-sub">Love Thy Will Be Done vs The Greatest Romance That Ever Been Sold · Adore vs The One. Only on Clubhouse.</span></figcaption>
+      </figure>
+      <figure class="ep reveal" data-cat="versus" data-year="More">
+        <a href="assets/clubhouse-28-versus-here-vs-i-wonder-u.jpg" class="lb ep-img" data-caption="Versus: Saturday @ 1pm EST. Here vs I Wonder U · Sun vs Fall In Love Tonight. Clubhouse 365."><img src="assets/clubhouse-28-versus-here-vs-i-wonder-u.jpg" alt="Club Prince 365 Clubhouse: Versus" loading="lazy"></a>
+        <figcaption><span class="ep-tag t-versus">Purple Versus</span><span class="ep-chip">Saturday @ 1pm EST</span><b>Versus</b><span class="ep-sub">Here vs I Wonder U · Sun vs Fall In Love Tonight. Clubhouse 365.</span></figcaption>
+      </figure>
+  </div>
+
+  <div class="ch-feature ch-feature-rev reveal">
+    <a href="assets/clubhouse-30-purple-all-night-part-deux.jpg" class="lb ch-feature-img" data-caption="Prince 365 &amp; Club Housequake present Purple All Night Part Deux: Remembering the 18 Hour Prince Clubhouse Event · December 2023 · Hosted by Fitz &amp; Belgrave"><img src="assets/clubhouse-30-purple-all-night-part-deux.jpg" alt="Purple All Night Part Deux promo: Prince 365 and Club Housequake, December 2023" loading="lazy"></a>
+    <div class="ch-feature-copy">
+      <p class="eyebrow">Legend status</p>
+      <h3>Purple All Night <span class="gold">Part Deux</span></h3>
+      <p class="ch-feature-date">December 2023 · Hosted by Fitz &amp; Belgrave</p>
+      <p>Prince 365 &amp; Club Housequake remembered <strong>the 18 Hour Prince Clubhouse Event</strong>, a legendary 18-hour fellowship, with a night of Prince music, storytelling and camaraderie. The entire event was dedicated to our beloved family member, <strong>Wally Safford</strong>.</p>
+      <p class="ch-feature-cred">Only on Clubhouse</p>
+    </div>
+  </div>
+
+  <div class="testimonials">
+  <blockquote class="testimonial reveal">
+    <p>“Thank you Rodney L Fitzgerald for the opportunity to share today with Prince 365 family my Professional journey. Had a blast, I am grateful.”</p>
+    <cite>Monique Mannen, special guest · A Living Room Chat, Sunday July 24th</cite>
+  </blockquote>
+  <blockquote class="testimonial testimonial-img reveal">
+    <a href="assets/clubhouse-25-olga-nice-france-room.jpg" class="lb t-shot" data-caption="Olga Hernández's story: a Club Prince 365 room with Rodney, Tc, Kim, MrOshun, miz, Ellece, Elleatrice, Andrea, Tameir, Olga, Tammy and Ronlyn"><img src="assets/clubhouse-25-olga-nice-france-room.jpg" alt="Clubhouse room screenshot shared by Olga Hernández, joining from Nice, France" loading="lazy"></a>
+    <div>
+      <span class="t-kicker">🌍 International reach</span>
+      <p>“Love my @prince365celebrate fam! Joined in even in Nice, France! ‘If I was Your Girlfriend’ for the win!”</p>
+      <cite>Olga Hernández · joining from Nice, France</cite>
+    </div>
+  </blockquote>
+  </div>
+</section>
+
+<!-- ============ FAMILY GALLERY ============ -->
+<section class="family" id="family">
+  <a class="family-hero lb reveal" href="assets/family-stage-symbol.jpg" data-caption="Prince 365 Clubhouse community · Minneapolis trip">
+    <img src="assets/family-stage-symbol.jpg" alt="The Prince 365 family on a Minneapolis trip, gathered on a dark stage under a giant glowing gold symbol" loading="lazy">
+    <div class="family-hero-copy">
+      <p class="eyebrow">The people make the party</p>
+      <h2 class="h2">The Prince 365 <span class="neon-text">Family</span></h2>
+    </div>
+  </a>
+
+  <div class="masonry" id="masonry">
+    <a class="m-item lb reveal" href="assets/family-chanhassen-cinema.jpg" data-caption="Prince 365 at Chanhassen Cinema · a movie theater outing on a Prince 365 Minneapolis trip">
+      <img src="assets/family-chanhassen-cinema-sm.jpg" alt="The Prince 365 group at night outside Chanhassen Cinema, marquee reading PRINCE 365" loading="lazy">
+      <span class="m-cap">Prince 365 at Chanhassen Cinema</span>
+    </a>
+    <a class="m-item lb reveal" href="assets/family-hotel.jpg" data-caption="Prince 365 Clubhouse community · Los Angeles trip">
+      <img src="assets/family-hotel-sm.jpg" alt="Prince 365 Clubhouse community group photo on the Los Angeles trip" loading="lazy">
+      <span class="m-cap">Los Angeles trip</span>
+    </a>
+    <a class="m-item lb reveal" href="assets/family-gallery.jpg" data-caption="Prince 365 Clubhouse community · Minneapolis trip">
+      <img src="assets/family-gallery-sm.jpg" alt="Prince 365 Clubhouse community group photo in an art gallery on a Minneapolis trip" loading="lazy">
+      <span class="m-cap">Minneapolis trip</span>
+    </a>
+    <a class="m-item lb reveal" href="assets/family-banquet.jpg" data-caption="Prince 365 Clubhouse community · Minneapolis trip">
+      <img src="assets/family-banquet-sm.jpg" alt="Prince 365 Clubhouse community group photo in a restaurant banquet room on a Minneapolis trip" loading="lazy">
+      <span class="m-cap">Minneapolis trip</span>
+    </a>
+  </div>
+  <p class="family-note reveal"><a href="assets/clubhouse-29-california-love-la-itinerary.jpg" class="lb" data-caption="“California Love”: Club Prince 365 Los Angeles itinerary, October 19–22">See the “California Love” L.A. itinerary</a> · Fan trips to Minneapolis and Los Angeles, curated by Rodney "Fitz" Fitzgerald for the Prince 365 Clubhouse community.</p>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="community" id="community">
+  <div class="cm-head">
+    <p class="eyebrow reveal">Pull up a seat</p>
+    <h2 class="h2 reveal">The Prince 365 <span class="neon-text">Living Room</span></h2>
+    <p class="big reveal cm-lede">Leave a message for the family, hang out in the live chat, and share your Prince 365 memories.</p>
+    <p class="mode-pill reveal" data-mode-pill><span class="dot"></span><span data-mode-text>Connecting…</span></p>
+  </div>
+
+  <div class="cm-tabs reveal" role="tablist" aria-label="Community">
+    <button class="cmt on" role="tab" aria-selected="true" aria-controls="pane-board" id="tab-board">Message Board</button>
+    <button class="cmt" role="tab" aria-selected="false" aria-controls="pane-chat" id="tab-chat">Live Chat <span class="live-dot" aria-hidden="true"></span></button>
+    <button class="cmt" role="tab" aria-selected="false" aria-controls="pane-photos" id="tab-photos">Memories Wall</button>
+  </div>
+
+  <!-- Message board -->
+  <div class="cm-pane on" id="pane-board" role="tabpanel" aria-labelledby="tab-board">
+    <form class="cm-form" id="postForm" novalidate>
+      <div class="row">
+        <label>Name<input name="name" maxlength="40" autocomplete="nickname" placeholder="Your name" required></label>
+      </div>
+      <label>Message<textarea name="message" maxlength="1000" rows="3" placeholder="Shout out the family, share a story, tell us your favorite deep cut…" required></textarea></label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cm-form-foot"><span class="count" data-count-for="message">0 / 1000</span><button class="btn btn-gold btn-sm" type="submit">Post message</button></div>
+      <p class="cm-msg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="board" id="board" aria-live="polite"><p class="empty">Loading messages…</p></div>
+  </div>
+
+  <!-- Live chat -->
+  <div class="cm-pane" id="pane-chat" role="tabpanel" aria-labelledby="tab-chat" hidden>
+    <div class="chat">
+      <div class="chat-top"><span class="chat-room">#the-living-room</span><span class="chat-status" id="chatStatus">offline</span></div>
+      <div class="chat-log" id="chatLog" aria-live="polite"><p class="empty">Say hi to the Purple Army 👋</p></div>
+      <form class="chat-form" id="chatForm" novalidate>
+        <input name="name" maxlength="40" placeholder="Name" aria-label="Your name" required class="chat-name">
+        <input name="message" maxlength="280" placeholder="Type a message…" aria-label="Message" required autocomplete="off" class="chat-input">
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-gold btn-sm" type="submit">Send</button>
+      </form>
+      <p class="cm-msg" id="chatMsg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Photo wall -->
+  <div class="cm-pane" id="pane-photos" role="tabpanel" aria-labelledby="tab-photos" hidden>
+    <form class="cm-form upload" id="photoForm" novalidate>
+      <h3 class="cm-h3">Share your Prince 365 memories</h3>
+      <label class="drop" id="drop">
+        <input type="file" name="file" accept="image/jpeg,image/png,image/webp" required>
+        <span class="drop-ui"><b>Choose a photo</b> or drop it here<small>JPG, PNG or WebP · up to 8 MB</small></span>
+        <img class="drop-preview" alt="" hidden>
+      </label>
+      <div class="row">
+        <label>Name<input name="name" maxlength="40" placeholder="Your name" required></label>
+        <label>Caption<input name="caption" maxlength="200" placeholder="Where, when, who? (optional)"></label>
+      </div>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" name="consent" required> I took this photo or have permission to share it, and it's OK for it to appear publicly on this page.</label>
+      <div class="cm-form-foot"><span></span><button class="btn btn-gold btn-sm" type="submit">Upload memory</button></div>
+      <p class="cm-msg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="fan-wall" id="fanWall"><p class="empty">No memories yet. Be the first!</p></div>
+  </div>
+</section>
+
+<!-- ============ NOTIFY ============ -->
+<section class="notify" id="notify">
+  <div class="ticket reveal">
+    <div class="ticket-stub">
+      <span>ADMIT</span><span class="big1">1</span><span>FUNK</span>
+    </div>
+    <div class="ticket-main">
+      <p class="eyebrow">Tickets and info coming soon</p>
+      <h2 class="h2">Do not <span class="neon-text">hesitate.</span></h2>
+      <p>Drop your email and be first to know when tickets for 365 Small Club drop.</p>
+      <form class="notify-form" id="notifyForm" novalidate>
+        <label for="signupName" class="sr-only">Name (optional)</label>
+        <input id="signupName" name="name" type="text" maxlength="40" placeholder="Name (optional)" autocomplete="name" class="nf-name">
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" name="email" type="email" maxlength="254" placeholder="you@funk.com" autocomplete="email" required>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-gold" type="submit">Get notified</button>
+      </form>
+      <p class="placeholder-note" data-mode-pill><span class="dot"></span><span data-mode-text>Connecting…</span> We'll only use your email for Prince 365 event news.</p>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE MORE THING ============ -->
+<section class="omt" id="one-more-thing">
+  <div class="omt-inner">
+    <p class="eyebrow reveal">Revealed the night before the party</p>
+    <h2 class="h2 reveal">One More <span class="neon-text">Thing…</span></h2>
+    <figure class="omt-fig reveal">
+      <img id="omtImg" src="assets/surprise-teaser.jpg" alt="Prince 365 Surprise, pixelated until the reveal" width="1600" height="981" loading="lazy">
+      <figcaption class="omt-lock" id="omtLock"><span class="omt-ico">🔒</span><span>Unlocks <strong>May 31, 2027</strong></span><span class="omt-count" id="omtCount"></span></figcaption>
+    </figure>
+    <p class="omt-note">Prince 365 Surprise</p>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <p class="footer-rest">You know the rest…</p>
+  <h2 class="never"><span class="flicker">We</span> Never <span class="flicker2">Close!</span></h2>
+  <div class="footer-meta">
+    <span>Prince 365 Studios</span><span>·</span><span>Hosted by Fitz, The C.E.O.</span><span>·</span><img class="mini-advisory" src="assets/purple-advisory.png" alt="Purple Advisory: Explicit Funk Content" width="72" height="47" loading="lazy">
+  </div>
+  <p class="footer-legal">Prince 365 is a fan celebration. Promo video, stills and posters © Prince 365 Studios. Event photos courtesy of the Prince 365 family.</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+</main>
+
 <script>
 const R=matchMedia('(prefers-reduced-motion: reduce)').matches,B=document.body;
 const V=vid,wide=matchMedia('(min-width:760px)').matches;
-if(R){V.removeAttribute('autoplay');V.poster='assets/stage-'+(wide?'wide':'vertical')+'.jpg'}else{V.src='assets/stage-'+(wide?'wide':'vertical')+'.mp4';V.play&&V.play().catch(()=>{})}
+if(R){V.removeAttribute('autoplay');V.rposter='assets/stage-'+(wide?'wide':'vertical')+'.jpg'}else{V.src='assets/stage-'+(wide?'wide':'vertical')+'.mp4';V.play&&V.play().catch(()=>{})}
 const M=mus,S=snd;let muted=localStorage.getItem('p365_mute');muted=muted===null?false:muted==='1';
 function setS(){S.classList.toggle('off',muted);S.setAttribute('aria-label',muted?'Turn sound on':'Turn sound off')}
 function fadeTo(v,ms){const a=M.volume,t0=performance.now();(function st(){const k=Math.min(1,(performance.now()-t0)/ms);M.volume=a+(v-a)*k;if(k<1)requestAnimationFrame(st)})()}
-S.onclick=()=>{muted=!muted;localStorage.setItem('p365_mute',muted?'1':'0');setS();if(muted)M.pause();else{M.volume=.35;M.play().catch(()=>{})}};
+S.onclick=()=>{muted=!M.paused;localStorage.setItem('p365_mute',muted?'1':'0');setS();if(muted)M.pause();else{M.volume=.35;M.play().catch(()=>{})}};
 let done=0;function reveal(sound){if(done)return;done=1;S.hidden=false;
  if(sound){muted=false;localStorage.setItem('p365_mute','0');M.currentTime=0;M.volume=.9;M.play().catch(()=>{});setTimeout(()=>fadeTo(.3,3000),12000)}else{muted=true;localStorage.setItem('p365_mute','1')}
  setS();setTimeout(()=>{B.classList.add('open');setTimeout(()=>B.classList.add('go'),1300);setTimeout(()=>curtain.remove(),2700)},sound?1050:150);V.play&&V.play().catch(()=>{})}
@@ -169,4 +1052,38 @@ beam(W*.15,Math.sin(t*.35)*.45-.25,'rgba(245,197,66,.12)');beam(W*.85,Math.sin(t
 const hz=x.createRadialGradient(W*.5+Math.sin(t*.2)*W*.2,H*.75,0,W*.5,H*.75,W*.9);hz.addColorStop(0,'rgba(123,44,191,.25)');hz.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=hz;x.fillRect(0,0,W,H);
 for(const q of pts){q.y-=q.v;if(q.y<-.02){q.y=1.02;q.x=Math.random()}const a=.35+.35*Math.sin(t*2+q.p);x.fillStyle=`rgba(255,223,126,${a})`;x.beginPath();x.arc(q.x*W+Math.sin(t*.5+q.p)*8,q.y*H,q.r,0,7);x.fill()}
 x.globalCompositeOperation='source-over';if(!R)requestAnimationFrame(f)}requestAnimationFrame(f)})();
-</script></body></html>
+</script><script src="assets/royal.js"></script>
+
+<script src="assets/config.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/community.js"></script>
+<script src="https://widget.mixcloud.com/media/js/widgetApi.js" defer></script>
+<script>
+addEventListener("load",()=>{
+  const f=document.getElementById("lenkaMix"),eq=document.querySelector(".dj .eq"),b=document.getElementById("mixBtn");
+  if(!f||!b)return;
+  const ui=on=>{b.classList.toggle("on",on);b.setAttribute("aria-pressed",String(on));b.querySelector(".mb-ico").textContent=on?"❚❚":"▶";b.querySelector(".mb-lbl").textContent=on?"Pause":"Play";b.setAttribute("aria-label",(on?"Pause":"Play")+" DJ Lenka Paris live mix");eq&&eq.classList.toggle("playing",on);};
+  const fallback=()=>{b.classList.add("native");};
+  if(!window.Mixcloud){fallback();return;}
+  let w,playing=false,waiting;
+  try{w=window.p365Mix=Mixcloud.PlayerWidget(f);}catch(e){fallback();return;}
+  w.ready.then(()=>{
+    w.events.play.on(()=>{document.dispatchEvent(new Event("p365:mix"));playing=true;clearTimeout(waiting);ui(true);});
+    w.events.pause.on(()=>{playing=false;ui(false);});
+    w.events.ended.on(()=>{playing=false;ui(false);w.seek(0).then(()=>w.play());});
+    b.addEventListener("click",()=>{
+      if(playing){w.pause();return;}
+      w.play();
+      clearTimeout(waiting);
+      waiting=setTimeout(()=>{if(!playing)fallback();},2500);
+    });
+  }).catch(fallback);
+});
+</script>
+<script>
+(function(){var t=new Date('2027-05-31T18:00:00-04:00').getTime(),c=document.getElementById('omtCount');
+function u(){var d=t-Date.now();if(!c)return;if(d<=0){c.textContent='Reveal coming any minute…';return;}
+var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);c.textContent=D+'d '+H+'h '+M+'m';}
+u();setInterval(u,6e4);})();
+</script>
+</body></html>
